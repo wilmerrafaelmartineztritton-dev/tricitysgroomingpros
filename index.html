@@ -606,6 +606,69 @@
         .service-card h3 { color: var(--text-dark); margin-bottom: var(--space-xs); }
         .service-card p { color: var(--text-light); font-size: 0.95rem; }
 
+        /* === 🎠 Services Carousel (NEW) === */
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-sm) 0;
+            margin-top: var(--space-md);
+        }
+        .services-track {
+            display: flex;
+            gap: var(--space-md);
+            transition: transform 0.4s ease;
+            padding: var(--space-xs) 0;
+        }
+        .service-carousel-card {
+            flex: 0 0 calc(25% - 18px);
+            min-width: 250px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        @media (max-width: 1024px) {
+            .service-carousel-card { flex: 0 0 calc(33.333% - 16px); }
+        }
+        @media (max-width: 768px) {
+            .service-carousel-card { flex: 0 0 100%; }
+        }
+        .service-carousel-card:hover { 
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        }
+        .service-carousel-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        .service-carousel-content { padding: var(--space-sm); }
+        .service-carousel-content h4 { 
+            font-size: 1.1rem; margin-bottom: var(--space-xs); 
+            color: var(--text-dark); 
+        }
+        .service-carousel-content p { 
+            font-size: 0.9rem; color: var(--text-light); 
+            margin-bottom: var(--space-sm); 
+        }
+        .services-carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+        }
+        .services-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .services-dot.active { background: var(--secondary); transform: scale(1.2); }
+
         /* === 💬 Testimonials === */
         .testimonials-grid { 
             display: grid; 
@@ -1041,27 +1104,61 @@
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-lg);color:var(--text-light)">
             The best grooming in the area, with eco-friendly products and staff certified in low-stress handling.
         </p>
-        <div class="services-grid">
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&q=80&w=200" 
-                     alt="Certified veterinarian examining a dog with professional care" 
-                     class="service-image" loading="lazy" width="80" height="80">
-                <h3>Certified Veterinarians</h3>
-                <p>Comprehensive health exams, vaccinations, and personalized plans focused on holistic wellness and eco-friendly products.</p>
+        
+        <!-- Services Carousel -->
+        <div class="services-carousel">
+            <div class="services-track" id="services-track">
+                <!-- Service 1: Full Grooming -->
+                <div class="service-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400" 
+                         alt="Full grooming service for dogs" 
+                         loading="lazy" width="400" height="180">
+                    <div class="service-carousel-content">
+                        <h4>Full Grooming</h4>
+                        <p>Complete grooming service including bath, brush, breed-specific cut, nail trim, ear cleaning, and finishing touches.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Full Bath Packages -->
+                <div class="service-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400" 
+                         alt="Premium bath package for dogs" 
+                         loading="lazy" width="400" height="180">
+                    <div class="service-carousel-content">
+                        <h4>Full Bath Packages</h4>
+                        <p>Premium bath with hypoallergenic shampoo, deep conditioning, blow-dry, brush-out, and cologne finish.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Cosmetic Dental Cleaning -->
+                <div class="service-carousel-card">
+                        <img src="images/comesti-dental.png" 
+                            alt="Cosmetic dental cleaning for dogs" 
+                            loading="lazy" 
+                            width="400" 
+                            height="180">
+                    <div class="service-carousel-content">
+                        <h4>Cosmetic Dental Cleaning</h4>
+                        <p>Non-anesthetic dental cleaning to remove plaque, freshen breath, and maintain oral health safely.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Add-ons -->
+                <div class="service-carousel-card">
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400" 
+                         alt="Add-on services for pets" 
+                         loading="lazy" width="400" height="180">
+                    <div class="service-carousel-content">
+                        <h4>Add-ons</h4>
+                        <p>Enhance any service with flea bath, dental brushing, nail trimming, or paw balm treatment.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=200" 
-                     alt="Healthy dog enjoying preventive care" 
-                     class="service-image" loading="lazy" width="80" height="80">
-                <h3>Preventive Pet Health</h3>
-                <p>Preventive care, nutritional guidance, and wellness programs with hypoallergenic products to help your pet thrive.</p>
-            </div>
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=200" 
-                     alt="Dog receiving professional grooming with low-stress techniques" 
-                     class="service-image" loading="lazy" width="80" height="80">
-                <h3>Low-Stress Canine Grooming</h3>
-                <p>Professional bathing, styling, and nail trims in a calm environment using certified techniques to reduce your pet's anxiety.</p>
+            <div class="services-carousel-controls" role="tablist" aria-label="Services navigation">
+                <button class="services-dot active" role="tab" aria-selected="true" aria-label="Go to service 1"></button>
+                <button class="services-dot" role="tab" aria-selected="false" aria-label="Go to service 2"></button>
+                <button class="services-dot" role="tab" aria-selected="false" aria-label="Go to service 3"></button>
+                <button class="services-dot" role="tab" aria-selected="false" aria-label="Go to service 4"></button>
             </div>
         </div>
     </section>
@@ -1463,6 +1560,65 @@
             }
         };
 
+        // === 🎠 SERVICES CAROUSEL (NEW) ===
+        const servicesCarousel = {
+            track: document.getElementById('services-track'),
+            dots: document.querySelectorAll('.services-dot'),
+            cards: document.querySelectorAll('.service-carousel-card'),
+            currentIndex: 0,
+            totalCards: 0,
+            
+            init() {
+                this.totalCards = this.cards.length;
+                this.setupEvents();
+                this.setupTouch();
+                this.updateTrack();
+            },
+            
+            goToCard(index) {
+                if(index<0) index=this.totalCards-1;
+                if(index>=this.totalCards) index=0;
+                this.currentIndex=index;
+                this.updateTrack();
+                this.updateDots();
+            },
+            
+            next(){ this.goToCard(this.currentIndex+1) },
+            prev(){ this.goToCard(this.currentIndex-1) },
+            
+            updateTrack() {
+                if(this.cards.length===0) return;
+                const cardWidth = this.cards[0].offsetWidth + 24;
+                this.track.style.transform = `translateX(-${this.currentIndex*cardWidth}px)`
+            },
+            
+            updateDots() {
+                this.dots.forEach((dot,i)=>{
+                    dot.classList.toggle('active',i===this.currentIndex);
+                    dot.setAttribute('aria-selected',i===this.currentIndex?'true':'false')
+                })
+            },
+            
+            setupEvents() {
+                this.dots.forEach((dot,i)=>{
+                    dot.addEventListener('click',()=>this.goToCard(i))
+                });
+                if(window.innerWidth>768) {
+                    setInterval(()=>this.next(),8e3)
+                }
+            },
+            
+            setupTouch() {
+                let touchStartX=0; let touchEndX=0;
+                this.track.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+                this.track.addEventListener('touchend',e=>{
+                    touchEndX=e.changedTouches[0].screenX;
+                    if(touchStartX-touchEndX>50) this.next();
+                    if(touchEndX-touchStartX>50) this.prev()
+                },{passive:true})
+            }
+        };
+
         // === 🎠 BLOG CAROUSEL ===
         const blogCarousel = {
             track: document.getElementById('blog-track'),
@@ -1662,10 +1818,12 @@
         // === 🚀 INIT ALL ===
         document.addEventListener('DOMContentLoaded',()=>{
             heroSlider.init();
+            servicesCarousel.init(); // Initialize new services carousel
             blogCarousel.init();
         });
         
         window.addEventListener('resize',()=>{
+            if(servicesCarousel.track) servicesCarousel.updateTrack();
             if(blogCarousel.track) blogCarousel.updateTrack()
         })
     })();
