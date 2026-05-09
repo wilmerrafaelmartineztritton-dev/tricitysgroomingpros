@@ -245,11 +245,21 @@
             padding: var(--space-xs) 0;
         }
         .nav-menu a:hover { color: var(--primary); }
-        .btn-reserve-nav {
-            background: var(--primary);
-            color: white !important;
-            padding: var(--space-xs) var(--space-sm);
+        .btn-reserve-nav { 
+            background: var(--primary); 
+            color: white !important; 
+            
+            /* Usamos valores fijos para asegurar que se vea bien */
+            padding: 10px 25px; 
+            
             border-radius: 25px;
+            
+            /* Esta es la clave: fuerza el ancho del botón */
+            min-width: 100px; 
+            
+            /* Centra el texto y asegura comportamiento de bloque */
+            text-align: center;
+            display: inline-block;
         }
 
         /* === 🧭 Dropdown Menu - CORREGIDO DEFINITIVO === */

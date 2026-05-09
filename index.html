@@ -266,11 +266,21 @@
             padding: var(--space-xs) 0;
         }
         .nav-menu a:hover { color: var(--primary); }
-        .btn-reserve-nav {
-            background: var(--primary);
-            color: white !important;
-            padding: var(--space-xs) var(--space-sm);
+        .btn-reserve-nav { 
+            background: var(--primary); 
+            color: white !important; 
+            
+            /* Usamos valores fijos para asegurar que se vea bien */
+            padding: 10px 25px; 
+            
             border-radius: 25px;
+            
+            /* Esta es la clave: fuerza el ancho del botón */
+            min-width: 100px; 
+            
+            /* Centra el texto y asegura comportamiento de bloque */
+            text-align: center;
+            display: inline-block;
         }
 
         /* === 🧭 Dropdown Menu - CORREGIDO DEFINITIVO === */
@@ -929,8 +939,8 @@
                 <li class="dropdown">
                     <a href="#" aria-haspopup="true" aria-expanded="false" id="aboutToggle">About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i></a>
                     <ul class="dropdown-content" role="menu" aria-labelledby="aboutToggle">
-                        <li role="none"><a href="#" role="menuitem">Privacy Policy</a></li>
-                        <li role="none"><a href="#" role="menuitem">Terms & Conditions</a></li>
+                        <li role="none"><a href="privacy-policy.html" role="menuitem">Privacy Policy</a></li>
+                        <li role="none"><a href="terms-conditions.html" role="menuitem">Terms & Conditions</a></li>
                     </ul>
                 </li>
                 <li><a href="index.html#services">Services</a></li>
@@ -1066,8 +1076,8 @@
                 </div>
                 <p class="testimonial-text">"My Golden Retriever looked impeccable and was so calm. You can tell they treat every pet with love and professionalism. 100% recommended!"</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Maria G." loading="lazy" width="40" height="40">
-                    <span>Maria G.</span>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Mary G." loading="lazy" width="40" height="40">
+                    <span>Mary G.</span>
                 </div>
             </div>
             <div class="testimonial-card">
@@ -1076,8 +1086,8 @@
                 </div>
                 <p class="testimonial-text">"The best grooming in town. The cut was perfect, the shampoo smelled amazing, and my poodle wouldn't stop wagging his tail. We'll be back!"</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Carlos R." loading="lazy" width="40" height="40">
-                    <span>Carlos R.</span>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Carl R." loading="lazy" width="40" height="40">
+                    <span>Carl R.</span>
                 </div>
             </div>
             <div class="testimonial-card">
@@ -1086,8 +1096,8 @@
                 </div>
                 <p class="testimonial-text">"Exceptional service. They explained the whole process, my Schnauzer came out relaxed with a stunning cut. Fair prices for the quality."</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Ana L." loading="lazy" width="40" height="40">
-                    <span>Ana L.</span>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Anna L." loading="lazy" width="40" height="40">
+                    <span>Anna L.</span>
                 </div>
             </div>
         </div>
@@ -1335,8 +1345,8 @@
             </div>
             <div class="footer-links">
                 <h4>Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
                 <a href="#">Cancellation Policy</a>
             </div>
             <div>
