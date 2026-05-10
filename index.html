@@ -232,9 +232,9 @@
         /* === 📱 Mobile Social Bar === */
         .mobile-social-bar {
             display: none;
-            background: var(--header-bg);
+            background: #ffffff; /* ← CORRECCIÓN: ; agregado */
             padding: 4px 15px !important;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.05); /* ← CORRECCIÓN: borde oscuro */
         }
 
         .mobile-social-bar .social-links {
@@ -255,6 +255,7 @@
         }
 
         .mobile-social-bar a {
+            color: var(--text-dark) !important; /* ← CORRECCIÓN: íconos oscuros sobre fondo blanco */
             font-size: 1.1rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -276,6 +277,7 @@
             justify-self: end;
             display: flex !important;
             font-size: 1.3rem !important;
+            color: var(--text-dark) !important; /* ← CORRECCIÓN: menú hamburguesa oscuro */
             padding: 3px !important;
             margin: 0;
         }
@@ -283,6 +285,7 @@
         /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
+            color: var(--text-dark) !important; /* ← CORRECCIÓN: teléfono oscuro */
             font-size: 1.2rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -1035,7 +1038,7 @@
                 <div class="badge"><i class="fas fa-leaf"></i> Eco-Friendly Products</div>
                 <div class="badge"><i class="fas fa-certificate"></i> Certified Staff</div>
             </div>
-            <form id="booking-form" action="https://formspree.io/f/mrejozod" method="POST">
+            <form id="booking-form" action="https://formspree.io/f/xeenpdvb" method="POST">
                 <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
