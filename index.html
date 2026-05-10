@@ -6,7 +6,7 @@
     <meta name="description" content="Tri-Citys Grooming Pros - Professional veterinary care, health, and aesthetic grooming for your pet.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.tricitysgrooming.com/">
-    <meta name="theme-color" content="#D4AF37">
+    <meta name="theme-color" content="#1e1a17">
     
     <!-- Open Graph & Twitter -->
     <meta property="og:title" content="Tri-Citys Grooming Pros | Professional Veterinary & Aesthetic Care">
@@ -80,7 +80,7 @@
             --text-dark: #333333;
             --text-light: #666666;
             --card-bg: #ffffff;
-            --header-bg: #fffffff2;
+            --header-bg: #1e1a17;
             --accent: #D96E4A;
             --yellow: #FFB347;
             --success: #28a745;
@@ -135,7 +135,7 @@
             font-weight: 700; 
         }
 
-        /* === 🎯 OPTIMIZED HEADER === */
+        /* === 🎯 HEADER DARK THEME === */
         .site-header {
             background: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -144,12 +144,22 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
             gap: var(--space-xs);
+        }
+
+        /* Texto blanco en header oscuro */
+        .site-header,
+        .site-header a:not(.btn-reserve-nav),
+        .site-header button,
+        .header-social a,
+        .menu-toggle,
+        .dropdown > a {
+            color: #ffffff !important;
         }
 
         .logo {
@@ -174,7 +184,6 @@
             align-items: center;
         }
         .header-social a {
-            color: var(--text-dark);
             font-size: 1.2rem;
             transition: var(--transition);
             text-decoration: none !important;
@@ -182,14 +191,16 @@
             align-items: center;
             justify-content: center;
         }
-        .header-social a:hover { color: var(--primary); transform: translateY(-2px); }
+        .header-social a:hover { 
+            color: var(--primary) !important; 
+            transform: translateY(-2px); 
+        }
 
         /* === 📞 Call Button in Header === */
         .header-call-btn {
             display: flex;
             align-items: center;
             gap: 6px;
-            color: var(--text-dark);
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none !important;
@@ -213,7 +224,6 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-dark);
             background: none;
             border: none;
             padding: 5px;
@@ -225,7 +235,7 @@
             display: none;
             background: var(--header-bg);
             padding: 4px 15px !important;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .mobile-social-bar .social-links {
@@ -246,7 +256,6 @@
         }
 
         .mobile-social-bar a {
-            color: var(--text-dark);
             font-size: 1.1rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -258,7 +267,7 @@
             text-decoration: none !important;
         }
         .mobile-social-bar a:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -268,7 +277,6 @@
             justify-self: end;
             display: flex !important;
             font-size: 1.3rem !important;
-            color: var(--text-dark) !important;
             padding: 3px !important;
             margin: 0;
         }
@@ -276,7 +284,6 @@
         /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
-            color: var(--text-dark);
             font-size: 1.2rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -284,7 +291,7 @@
             text-decoration: none !important;
         }
         .mobile-call-btn:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -301,12 +308,11 @@
         }
         .nav-menu a {
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 600;
             transition: var(--transition);
             padding: var(--space-xs) 0;
         }
-        .nav-menu a:hover { color: var(--primary); }
+        .nav-menu a:hover { color: var(--primary) !important; }
         .btn-reserve-nav { 
             background: var(--primary); 
             color: white !important; 
@@ -336,7 +342,7 @@
             position: absolute;
             background: var(--card-bg);
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 10;
             border-radius: 12px;
             padding: 10px 0;
@@ -358,25 +364,15 @@
             .dropdown:hover .dropdown-content {
                 display: block !important;
             }
+            .dropdown-content a { color: var(--text-dark) !important; }
+            .dropdown-content a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--primary) !important;
+                padding-left: 25px;
+            }
         }
 
-        /* Estilos de los enlaces del dropdown */
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 20px;
-            display: block;
-            text-decoration: none !important;
-            transition: var(--transition);
-        }
-
-        .dropdown-content a:hover,
-        .dropdown-content a:focus {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--primary);
-            padding-left: 25px;
-        }
-
-        /* === 📱 Dropdown en móvil - CORRECCIÓN FINAL === */
+        /* === 📱 Dropdown en móvil - CORREGIDO === */
         @media (max-width: 768px) {
             .dropdown {
                 position: relative !important;
@@ -390,7 +386,7 @@
                 border-left: 3px solid var(--primary);
                 margin-left: 20px;
                 padding: 0 0 10px 15px;
-                background: transparent !important;
+                background: rgba(255,255,255,0.05) !important;
                 min-width: auto;
                 display: none !important;
                 width: auto;
@@ -406,7 +402,7 @@
             .dropdown-content a {
                 padding: 8px 0;
                 font-size: 0.95rem;
-                color: var(--text-light);
+                color: #e0e0e0 !important;
                 display: block;
                 text-decoration: none !important;
                 pointer-events: auto !important;
@@ -415,7 +411,7 @@
             .dropdown-content a:hover {
                 padding-left: 10px;
                 background: transparent;
-                color: var(--primary);
+                color: var(--primary) !important;
             }
         }
 
@@ -442,11 +438,12 @@
                 width: 100%;
                 background: var(--header-bg);
                 padding: var(--space-md);
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                box-shadow: 0 10px 10px rgba(0,0,0,0.3);
                 z-index: 998;
             }
             .nav-menu.active { display: block; }
             .nav-menu ul { flex-direction: column; text-align: center; gap: var(--space-sm); }
+            .nav-menu a { color: #ffffff !important; }
             
             .mobile-social-bar .social-links {
                 display: grid !important;
@@ -653,7 +650,7 @@
         .service-card h3 { color: var(--text-dark); margin-bottom: var(--space-xs); }
         .service-card p { color: var(--text-light); font-size: 0.95rem; }
 
-        /* === 🎠 Services Carousel (NEW) === */
+        /* === 🎠 Services Carousel === */
         .services-carousel {
             position: relative;
             overflow: hidden;
@@ -676,288 +673,88 @@
             transition: var(--transition);
             text-align: center;
         }
-        @media (max-width: 1024px) {
-            .service-carousel-card { flex: 0 0 calc(33.333% - 16px); }
-        }
-        @media (max-width: 768px) {
-            .service-carousel-card { flex: 0 0 100%; }
-        }
-        .service-carousel-card:hover { 
-            transform: translateY(-3px) scale(1.02); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-        }
-        .service-carousel-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: var(--radius) var(--radius) 0 0;
-        }
+        @media (max-width: 1024px) { .service-carousel-card { flex: 0 0 calc(33.333% - 16px); } }
+        @media (max-width: 768px) { .service-carousel-card { flex: 0 0 100%; } }
+        .service-carousel-card:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .service-carousel-card img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; }
         .service-carousel-content { padding: var(--space-sm); }
-        .service-carousel-content h4 { 
-            font-size: 1.1rem; margin-bottom: var(--space-xs); 
-            color: var(--text-dark); 
-        }
-        .service-carousel-content p { 
-            font-size: 0.9rem; color: var(--text-light); 
-            margin-bottom: var(--space-sm); 
-        }
-        .services-carousel-controls {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-xs);
-            margin-top: var(--space-md);
-        }
-        .services-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+        .service-carousel-content h4 { font-size: 1.1rem; margin-bottom: var(--space-xs); color: var(--text-dark); }
+        .service-carousel-content p { font-size: 0.9rem; color: var(--text-light); margin-bottom: var(--space-sm); }
+        .services-carousel-controls { display: flex; justify-content: center; gap: var(--space-xs); margin-top: var(--space-md); }
+        .services-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; transition: var(--transition); }
         .services-dot.active { background: var(--secondary); transform: scale(1.2); }
 
         /* === 💬 Testimonials === */
-        .testimonials-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: var(--space-md); 
-        }
-        .testimonial-card {
-            background: var(--card-bg); 
-            padding: var(--space-md); 
-            border-radius: var(--radius);
-            border-left: 4px solid var(--accent); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 10px; left: 15px;
-            font-size: 3rem;
-            color: var(--secondary);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: var(--space-sm);
-            position: relative;
-            z-index: 1;
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-        .testimonial-author img {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+        .testimonial-card { background: var(--card-bg); padding: var(--space-md); border-radius: var(--radius); border-left: 4px solid var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
+        .testimonial-card::before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 3rem; color: var(--secondary); opacity: 0.3; font-family: Georgia, serif; line-height: 1; }
+        .testimonial-text { font-style: italic; color: var(--text-light); margin-bottom: var(--space-sm); position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text-dark); }
+        .testimonial-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
         .testimonial-rating { color: var(--yellow); margin-bottom: var(--space-xs); }
 
-        /* === 🎨 Gallery - STATIC CARDS === */
-        .gallery-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: var(--space-md); 
-        }
-        .gallery-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .gallery-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-card-content {
-            padding: var(--space-sm);
-        }
-        .gallery-card-content h4 {
-            color: var(--secondary);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        .gallery-card-content p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: var(--space-xs);
-        }
-        .gallery-card .btn-cta {
-            padding: 8px 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            display: inline-block;
-        }
+        /* === 🎨 Gallery === */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); }
+        .gallery-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
+        .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .gallery-card-content { padding: var(--space-sm); }
+        .gallery-card-content h4 { color: var(--secondary); margin-bottom: 5px; font-size: 1.1rem; }
+        .gallery-card-content p { color: var(--text-light); font-size: 0.9rem; margin-bottom: var(--space-xs); }
+        .gallery-card .btn-cta { padding: 8px 20px; font-size: 0.9rem; margin-top: 10px; display: inline-block; }
 
         /* === 🏷️ Trust Badges === */
-        .trust-badges {
-            display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap;
-            margin: var(--space-md) 0; padding: var(--space-sm);
-            background: rgba(212, 175, 55, 0.1); border-radius: 12px;
-        }
-        .badge { 
-            display: flex; align-items: center; gap: 8px; 
-            font-weight: 600; font-size: 0.9rem; color: var(--text-dark); 
-        }
+        .trust-badges { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin: var(--space-md) 0; padding: var(--space-sm); background: rgba(212, 175, 55, 0.1); border-radius: 12px; }
+        .badge { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
         .badge i { color: var(--secondary); font-size: 1.2rem; }
 
         /* === 📋 Form === */
-        .booking-container { 
-            background: var(--card-bg); 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: var(--space-lg); 
-            border-radius: var(--radius); 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
-        }
+        .booking-container { background: var(--card-bg); max-width: 800px; margin: 0 auto; padding: var(--space-lg); border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: var(--space-sm); }
-        label { 
-            display: block; 
-            margin-bottom: 6px; 
-            font-weight: 600; 
-            color: var(--text-dark); 
-        }
-        input, select {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
-            font-family: inherit; background: #fafafa; color: var(--text-dark); 
-            transition: border 0.3s;
-        }
+        label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--text-dark); }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; background: #fafafa; color: var(--text-dark); transition: border 0.3s; }
         input:focus, select:focus { border-color: var(--primary); outline: none; }
-        .form-msg { 
-            text-align: center; margin-top: var(--space-sm); 
-            font-weight: 600; padding: 10px; border-radius: 8px; display: none; 
-        }
+        .form-msg { text-align: center; margin-top: var(--space-sm); font-weight: 600; padding: 10px; border-radius: 8px; display: none; }
         .form-msg.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
         .form-msg.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         .hp-field { display: none !important; opacity: 0; height: 0; width: 0; overflow: hidden; }
 
         /* === ❓ FAQ === */
         .faq-container { max-width: 800px; margin: 0 auto; }
-        details {
-            background: var(--card-bg); margin-bottom: var(--space-sm); 
-            border-radius: 12px; overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: var(--transition);
-        }
+        details { background: var(--card-bg); margin-bottom: var(--space-sm); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: var(--transition); }
         details[open] { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        summary {
-            padding: var(--space-sm); cursor: pointer; font-weight: 600; 
-            list-style: none; display: flex; justify-content: space-between; align-items: center;
-        }
-        summary::after { 
-            content: '+'; font-size: 1.5rem; color: var(--secondary); 
-            transition: transform 0.3s; 
-        }
+        summary { padding: var(--space-sm); cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
         details[open] summary::after { transform: rotate(45deg); }
         details p { padding: 0 var(--space-sm) var(--space-sm); color: var(--text-light); }
 
         /* === 📰 Blog Carousel === */
-        .blog-carousel {
-            position: relative;
-            overflow: hidden;
-            padding: var(--space-sm) 0;
-        }
-        .blog-track {
-            display: flex;
-            gap: var(--space-md);
-            transition: transform 0.4s ease;
-            padding: var(--space-xs) 0;
-        }
-        .blog-card {
-            flex: 0 0 calc(33.333% - 16px);
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-        @media (max-width: 768px) {
-            .blog-card { flex: 0 0 100%; }
-        }
-        .blog-card:hover { 
-            transform: translateY(-3px) scale(1.02); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-        }
-        .blog-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: var(--radius) var(--radius) 0 0;
-        }
+        .blog-carousel { position: relative; overflow: hidden; padding: var(--space-sm) 0; }
+        .blog-track { display: flex; gap: var(--space-md); transition: transform 0.4s ease; padding: var(--space-xs) 0; }
+        .blog-card { flex: 0 0 calc(33.333% - 16px); background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); }
+        @media (max-width: 768px) { .blog-card { flex: 0 0 100%; } }
+        .blog-card:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .blog-card img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; }
         .blog-card-content { padding: var(--space-sm); }
-        .blog-card-date { 
-            font-size: 0.8rem; color: #888; 
-            display: block; margin-bottom: var(--space-xs); 
-        }
-        .blog-card h3 { 
-            font-size: 1.1rem; margin-bottom: var(--space-xs); 
-            color: var(--text-dark); 
-        }
-        .blog-card p { 
-            font-size: 0.9rem; color: var(--text-light); 
-            margin-bottom: var(--space-sm); 
-        }
-        .blog-card a { 
-            color: var(--accent); font-weight: bold; 
-            text-decoration: none; font-size: 0.95rem; 
-        }
-        .blog-carousel-controls {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-xs);
-            margin-top: var(--space-md);
-        }
-        .blog-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+        .blog-card-date { font-size: 0.8rem; color: #888; display: block; margin-bottom: var(--space-xs); }
+        .blog-card h3 { font-size: 1.1rem; margin-bottom: var(--space-xs); color: var(--text-dark); }
+        .blog-card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: var(--space-sm); }
+        .blog-card a { color: var(--accent); font-weight: bold; text-decoration: none; font-size: 0.95rem; }
+        .blog-carousel-controls { display: flex; justify-content: center; gap: var(--space-xs); margin-top: var(--space-md); }
+        .blog-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; transition: var(--transition); }
         .blog-dot.active { background: var(--secondary); transform: scale(1.2); }
 
         /* === 🦶 Footer === */
-        footer { 
-            background: var(--secondary); 
-            color: white; 
-            padding: var(--space-xl) 10% var(--space-md); 
-            z-index: 1; 
-            position: relative; 
-        }
-        .footer-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: var(--space-lg); 
-            margin-bottom: var(--space-lg); 
-        }
-        .footer-links a { 
-            color: white; text-decoration: none; 
-            display: block; margin-bottom: 8px; opacity: 0.9; 
-        }
+        footer { background: var(--secondary); color: white; padding: var(--space-xl) 10% var(--space-md); z-index: 1; position: relative; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-lg); }
+        .footer-links a { color: white; text-decoration: none; display: block; margin-bottom: 8px; opacity: 0.9; }
         .footer-links a:hover { opacity: 1; text-decoration: underline; }
 
         /* === 📱 WhatsApp Floating === */
         .float-btns { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
-        .float-btn {
-            width: 60px; height: 60px; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; color: white; background: #25d366; 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); 
-            transition: var(--transition); text-decoration: none;
-        }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; background: #25d366; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); transition: var(--transition); text-decoration: none; }
         .float-btn:hover { transform: scale(1.1); }
 
-        /* === 📱 Other Responsive === */
+        /* === 📱 Responsive === */
         @media (max-width: 768px) {
             .intro-section { padding: var(--space-lg) 5%; }
             .hero { height: 70vh; min-height: 450px; }
@@ -975,33 +772,15 @@
             .blog-card h3 { font-size: 1rem; }
             .booking-container { padding: var(--space-md); }
             .form-group { margin-bottom: var(--space-xs); }
-            .footer-grid { 
-                grid-template-columns: 1fr; text-align: center; 
-                justify-items: center; gap: var(--space-md);
-            }
-            .footer-grid > div { 
-                display: flex; flex-direction: column; 
-                align-items: center; width: 100%; 
-            }
-            .footer-grid > div:first-child .logo {
-                justify-content: center; display: inline-flex;
-                margin-bottom: var(--space-xs);
-            }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: var(--space-md); }
+            .footer-grid > div { display: flex; flex-direction: column; align-items: center; width: 100%; }
+            .footer-grid > div:first-child .logo { justify-content: center; display: inline-flex; margin-bottom: var(--space-xs); }
             .footer-grid > div:first-child p { max-width: 90%; margin: 0 auto; }
-            .footer-links {
-                display: flex; flex-direction: column;
-                align-items: center; width: 100%;
-            }
+            .footer-links { display: flex; flex-direction: column; align-items: center; width: 100%; }
             .footer-links h4 { margin-bottom: var(--space-sm); }
-            .footer-grid > div:last-child {
-                display: flex; flex-direction: column;
-                align-items: center; width: 100%;
-            }
+            .footer-grid > div:last-child { display: flex; flex-direction: column; align-items: center; width: 100%; }
             .footer-grid > div:last-child h4 { margin-bottom: var(--space-sm); }
-            .footer-grid > div:last-child > div {
-                display: flex; justify-content: center;
-                gap: 20px; width: 100%;
-            }
+            .footer-grid > div:last-child > div { display: flex; justify-content: center; gap: 20px; width: 100%; }
         }
         
         @media (max-width: 480px) {
@@ -1018,7 +797,7 @@
 
     <!-- 📱 WhatsApp Button -->
     <div class="float-btns">
-        <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
+        <a href="https://wa.me/15094925802?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
            class="float-btn whatsapp" 
            target="_blank" 
            rel="noopener" 
@@ -1052,7 +831,6 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <!-- CORRECCIÓN: href="javascript:void(0)" para evitar salto de página -->
                     <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false" id="aboutToggle">
                         About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i>
                     </a>
@@ -1070,14 +848,13 @@
         </nav>
     </header>
 
-    <!-- 📱 Mobile Social Bar (Optimized) -->
+    <!-- 📱 Mobile Social Bar -->
     <div class="mobile-social-bar">
         <div class="social-links">
             <div class="social-icons-group">
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <!-- Mobile Call Button -->
                 <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
                     <i class="fas fa-phone"></i>
                 </a>
@@ -1091,46 +868,20 @@
     <!-- 🎠 Hero Slider -->
     <section class="hero" id="home">
         <div class="slider-container" id="hero-slider" role="region" aria-label="Pet care tips" aria-roledescription="carousel">
-            <!-- Slide 1 -->
             <div class="slider-slide active" style="background-image:url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1920')" role="group" aria-label="1 of 5: Nutrition">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1920" 
-                     alt="Balanced nutrition for dogs with eco-friendly products" 
-                     loading="eager" width="1920" height="1080" 
-                     style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1920" alt="Balanced nutrition" loading="eager" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
-            <!-- Slide 2 -->
             <div class="slider-slide" style="background-image:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1920')" role="group" aria-label="2 of 5: Hygiene">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1920" 
-                     alt="Professional brushing and coat care for dogs" 
-                     loading="lazy" width="1920" height="1080" 
-                     style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1920" alt="Professional brushing" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
-            <!-- Slide 3 -->
-            <div class="slider-slide" style="background-image: url('images/cuidado-ojos.png');" role="group" aria-label="3 of 5: Mental & Socialization">
-                <img src="images/cuidado-ojos.png" 
-                    alt="Care of "critical areas" (Eyes and Beard)." 
-                    loading="lazy" 
-                    width="1920" 
-                    height="1080" 
-                    style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0;">
+            <div class="slider-slide" style="background-image:url('images/cuidado-ojos.png')" role="group" aria-label="3 of 5: Critical Areas">
+                <img src="images/cuidado-ojos.png" alt="Eye and beard care" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
-            <!-- Slide 4 -->
-            <div class="slider-slide" style="background-image: url('images/salud_dental.png');" role="group" aria-label="4 of 5: Dental Health">
-                <img src="images/salud_dental.png" 
-                    alt="Professional canine dental cleaning" 
-                    loading="lazy" 
-                    width="1920" 
-                    height="1080" 
-                    style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0;">
+            <div class="slider-slide" style="background-image:url('images/salud_dental.png')" role="group" aria-label="4 of 5: Dental Health">
+                <img src="images/salud_dental.png" alt="Dental cleaning" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
-            <!-- Slide 5 -->
-            <div class="slider-slide" style="background-image: url('images/cuidado-uñas.png');" role="group" aria-label="5 of 5: Veterinary Care">
-                <img src="images/cuidado-uñas.png" 
-                    alt="Certified professionals" 
-                    loading="lazy" 
-                    width="1920" 
-                    height="1080" 
-                    style="position:absolute; width:100%; height:100%; object-fit:cover; opacity:0;">
+            <div class="slider-slide" style="background-image:url('images/cuidado-uñas.png')" role="group" aria-label="5 of 5: Nail Care">
+                <img src="images/cuidado-uñas.png" alt="Nail trimming" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
         </div>
         <div class="slider-content">
@@ -1163,50 +914,31 @@
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-lg);color:var(--text-light)">
             The best grooming in the area, with eco-friendly products and staff certified in low-stress handling.
         </p>
-        
-        <!-- Services Carousel -->
         <div class="services-carousel">
             <div class="services-track" id="services-track">
-                <!-- Service 1: Full Grooming -->
                 <div class="service-carousel-card">
-                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400" 
-                         alt="Full grooming service for dogs" 
-                         loading="lazy" width="400" height="180">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400" alt="Full Grooming" loading="lazy" width="400" height="180">
                     <div class="service-carousel-content">
                         <h4>Full Grooming</h4>
                         <p>Complete grooming service including bath, brush, breed-specific cut, nail trim, ear cleaning, and finishing touches.</p>
                     </div>
                 </div>
-
-                <!-- Service 2: Full Bath Packages -->
                 <div class="service-carousel-card">
-                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400" 
-                         alt="Premium bath package for dogs" 
-                         loading="lazy" width="400" height="180">
+                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400" alt="Full Bath Packages" loading="lazy" width="400" height="180">
                     <div class="service-carousel-content">
                         <h4>Full Bath Packages</h4>
                         <p>Premium bath with hypoallergenic shampoo, deep conditioning, blow-dry, brush-out, and cologne finish.</p>
                     </div>
                 </div>
-
-                <!-- Service 3: Cosmetic Dental Cleaning -->
                 <div class="service-carousel-card">
-                        <img src="images/comesti-dental.png" 
-                            alt="Cosmetic dental cleaning for dogs" 
-                            loading="lazy" 
-                            width="400" 
-                            height="180">
+                    <img src="images/comesti-dental.png" alt="Cosmetic Dental Cleaning" loading="lazy" width="400" height="180">
                     <div class="service-carousel-content">
                         <h4>Cosmetic Dental Cleaning</h4>
                         <p>Non-anesthetic dental cleaning to remove plaque, freshen breath, and maintain oral health safely.</p>
                     </div>
                 </div>
-
-                <!-- Service 4: Add-ons -->
                 <div class="service-carousel-card">
-                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400" 
-                         alt="Add-on services for pets" 
-                         loading="lazy" width="400" height="180">
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400" alt="Add-ons" loading="lazy" width="400" height="180">
                     <div class="service-carousel-content">
                         <h4>Add-ons</h4>
                         <p>Enhance any service with flea bath, dental brushing, nail trimming, or paw balm treatment.</p>
@@ -1232,7 +964,7 @@
                 </div>
                 <p class="testimonial-text">"My Golden Retriever looked impeccable and was so calm. You can tell they treat every pet with love and professionalism. 100% recommended!"</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Mary G." loading="lazy" width="40" height="40">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Mary G." loading="lazy" width="40" height="40">
                     <span>Mary G.</span>
                 </div>
             </div>
@@ -1242,7 +974,7 @@
                 </div>
                 <p class="testimonial-text">"The best grooming in town. The cut was perfect, the shampoo smelled amazing, and my poodle wouldn't stop wagging his tail. We'll be back!"</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Carl R." loading="lazy" width="40" height="40">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Carl R." loading="lazy" width="40" height="40">
                     <span>Carl R.</span>
                 </div>
             </div>
@@ -1252,55 +984,38 @@
                 </div>
                 <p class="testimonial-text">"Exceptional service. They explained the whole process, my Schnauzer came out relaxed with a stunning cut. Fair prices for the quality."</p>
                 <div class="testimonial-author">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Satisfied client Anna L." loading="lazy" width="40" height="40">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Anna L." loading="lazy" width="40" height="40">
                     <span>Anna L.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 🎨 Gallery - STATIC CARDS WITH LOCAL IMAGES -->
+    <!-- 🎨 Gallery -->
     <section id="gallery">
         <h2 class="section-title">Real Transformations</h2>
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-md);color:var(--text-light)">
             See the beautiful results of our eco-friendly grooming services.
         </p>
         <div class="gallery-grid">
-            <!-- Card 1: French Bulldog -->
             <div class="gallery-card">
-                <img src="images/bulldog.png" 
-                    alt="French Bulldog after professional grooming session" 
-                    loading="lazy" 
-                    width="600" 
-                    height="250">
+                <img src="images/bulldog.png" alt="Charlie - French Bulldog" loading="lazy" width="600" height="250">
                 <div class="gallery-card-content">
                     <h4>Charlie - French Bulldog</h4>
                     <p>Full grooming + eco-friendly hydration treatment</p>
                     <a href="gallery.html" class="btn-cta">View in Gallery</a>
                 </div>
             </div>
-            
-            <!-- Card 2: Labrador Retriever -->
             <div class="gallery-card">
-                <img src="images/labrador.png" 
-                    alt="Labrador Retriever after professional grooming session" 
-                    loading="lazy" 
-                    width="600" 
-                    height="250">
+                <img src="images/labrador.png" alt="Buddy - Labrador Retriever" loading="lazy" width="600" height="250">
                 <div class="gallery-card-content">
                     <h4>Buddy - Labrador Retriever</h4>
                     <p>Breed-specific cut + ear cleaning with low-stress handling</p>
                     <a href="gallery.html" class="btn-cta">View in Gallery</a>
                 </div>
             </div>
-            
-            <!-- Card 3: Golden Retriever -->
             <div class="gallery-card">
-                <img src="images/golden.png" 
-                    alt="Golden Retriever after professional grooming session" 
-                    loading="lazy" 
-                    width="600" 
-                    height="250">
+                <img src="images/golden.png" alt="Max - Golden Retriever" loading="lazy" width="600" height="250">
                 <div class="gallery-card-content">
                     <h4>Max - Golden Retriever</h4>
                     <p>Relaxing bath + nail trim with hypoallergenic products</p>
@@ -1397,7 +1112,7 @@
         <div class="blog-carousel">
             <div class="blog-track" id="blog-track">
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600" alt="Dog being professionally bathed" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600" alt="Dog bathing" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>How often should I bathe my dog?</h3>
                         <p>Discover the ideal frequency based on your pet's coat type and lifestyle.</p>
@@ -1405,7 +1120,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600" alt="Benefits of daily brushing" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600" alt="Daily brushing" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>5 benefits of daily brushing</h3>
                         <p>Keeping fur tangle-free isn't just about looks—it's skin health.</p>
@@ -1413,7 +1128,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Healthy nutrition for dogs" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Nutrition" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>Nutrition and coat shine</h3>
                         <p>What your dog eats shows in their coat. We share our best tips.</p>
@@ -1421,7 +1136,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Interactive toys for dogs" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Interactive toys" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>Interactive toys</h3>
                         <p>Use Kong-style food dispensers or scent mats so they have to "work" for their reward.</p>
@@ -1429,7 +1144,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Basic dog training" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Basic training" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>Basic training</h3>
                         <p>Spend 5 minutes a day reviewing simple commands (sit, stay). This strengthens your bond and keeps their mind sharp.</p>
@@ -1437,7 +1152,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Paw and nail care for dogs" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Paw care" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>Paw pad and nail checkups</h3>
                         <p>Paws are your dog's direct contact with the world.</p>
@@ -1445,7 +1160,7 @@
                     </div>
                 </article>
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Weight management for dogs" loading="lazy" decoding="async" width="600" height="180">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" alt="Weight management" loading="lazy" width="600" height="180">
                     <div class="blog-card-content">
                         <h3>Portion control and ideal weight</h3>
                         <p>Overweight is silent but drastically reduces life expectancy.</p>
@@ -1484,7 +1199,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2127.649345850957!2d-119.10391282465027!3d46.22649167109664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54987edbc9f88e7b%3A0xb593e97754e3489!2s808%20S%2010th%20Ave%2C%20Pasco%2C%20WA%2099301%2C%20USA!5e1!3m2!1sen!2sus!4v1778156216519!5m2!1sen!2sus" 
                         width="100%" height="250" style="border:0;border-radius:15px" 
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                        title="Location of Tri-Citys Grooming Pros on Google Maps - 808 S 10th Ave, Pasco, WA">
+                        title="Location of Tri-Citys Grooming Pros on Google Maps">
                 </iframe>
             </div>
         </div>
@@ -1619,7 +1334,7 @@
             }
         };
 
-        // === 🎠 SERVICES CAROUSEL (NEW) ===
+        // === 🎠 SERVICES CAROUSEL ===
         const servicesCarousel = {
             track: document.getElementById('services-track'),
             dots: document.querySelectorAll('.services-dot'),
@@ -1737,7 +1452,7 @@
             }
         };
 
-        // === 📱 Optimized Mobile Menu Handler ===
+        // === 📱 Mobile Menu Handler ===
         const initMobileMenu = () => {
             const menuToggle = document.getElementById('menuToggle');
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -1756,6 +1471,8 @@
             
             navMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
+                    // No cerrar menú si es el toggle del dropdown
+                    if (link.getAttribute('aria-haspopup') === 'true') return;
                     navMenu.classList.remove('active');
                     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
                     if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
@@ -1777,63 +1494,57 @@
             initMobileMenu();
         }
 
-        // === 🧭 Dropdown Accessibility & Mobile Toggle - FINAL FIX ===
+        // === 🧭 Dropdown Toggle - FINAL FIX ===
         const initDropdown = () => {
             const dropdowns = document.querySelectorAll('.dropdown');
             
-            // Función auxiliar para detectar móvil
             function isMobile() {
                 return window.innerWidth <= 768;
             }
             
             dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('a[aria-haspopup]');
-                const menu = dropdown.querySelector('.dropdown-content');
+                const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+                if (!toggle) return;
                 
-                if (!toggle || !menu) return;
-                
-                // Click en el botón "About"
-                toggle.addEventListener('click', function(e) {
-                    // Solo actuar si estamos en móvil (donde no hay hover)
+                toggle.addEventListener('click', (e) => {
                     if (!isMobile()) return;
                     
                     e.preventDefault();
                     e.stopPropagation();
                     e.stopImmediatePropagation();
                     
-                    // Cerrar todos los demás dropdowns
+                    // Cerrar otros dropdowns
                     dropdowns.forEach(d => {
                         if (d !== dropdown && d.classList.contains('active')) {
                             d.classList.remove('active');
-                            const t = d.querySelector('a[aria-haspopup]');
+                            const t = d.querySelector('a[aria-haspopup="true"]');
                             if (t) t.setAttribute('aria-expanded', 'false');
                         }
                     });
                     
                     // Toggle este dropdown
-                    const isActive = !dropdown.classList.contains('active');
-                    dropdown.classList.toggle('active');
+                    const isActive = dropdown.classList.toggle('active');
                     toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
                 }, { passive: false });
                 
-                // Prevenir que los enlaces del dropdown cierren el menú
-                menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        if (isMobile()) {
-                            e.stopPropagation();
-                        }
+                // Prevenir cierre al hacer clic en enlaces del dropdown
+                const menu = dropdown.querySelector('.dropdown-content');
+                if (menu) {
+                    menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            if (isMobile()) e.stopPropagation();
+                        });
                     });
-                });
+                }
             });
             
-            // Cerrar dropdown al hacer click fuera (con prioridad)
+            // Cerrar al hacer clic fuera
             document.addEventListener('click', (e) => {
                 if (!isMobile()) return;
-                
                 dropdowns.forEach(dropdown => {
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('active');
-                        const toggle = dropdown.querySelector('a[aria-haspopup]');
+                        const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
                         if (toggle) toggle.setAttribute('aria-expanded', 'false');
                     }
                 });
