@@ -152,13 +152,10 @@
             gap: var(--space-xs);
         }
 
-        /* Texto blanco en header oscuro */
-        .site-header,
-        .site-header a:not(.btn-reserve-nav),
-        .site-header button,
-        .header-social a,
+        /* CORRECCIÓN 1: Texto blanco SOLO en navegación principal, NO en redes sociales */
+        .nav-menu a,
         .menu-toggle,
-        .dropdown > a {
+        .dropdown > a:not(.header-social a) {
             color: #ffffff !important;
         }
 
@@ -184,6 +181,8 @@
             align-items: center;
         }
         .header-social a {
+            /* CORRECCIÓN 1: Restaurar color original de íconos de redes */
+            color: var(--text-dark);
             font-size: 1.2rem;
             transition: var(--transition);
             text-decoration: none !important;
@@ -192,7 +191,7 @@
             justify-content: center;
         }
         .header-social a:hover { 
-            color: var(--primary) !important; 
+            color: var(--primary); 
             transform: translateY(-2px); 
         }
 
@@ -359,12 +358,14 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mostrar dropdown SOLO al hacer HOVER en desktop */
+        /* CORRECCIÓN 2: Dropdown en desktop con fondo blanco y texto oscuro */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block !important;
             }
-            .dropdown-content a { color: var(--text-dark) !important; }
+            .dropdown-content a { 
+                color: var(--text-dark) !important; 
+            }
             .dropdown-content a:hover {
                 background: rgba(212, 175, 55, 0.1);
                 color: var(--primary) !important;
@@ -1055,9 +1056,9 @@
                         <label for="service">Service</label>
                         <select id="service" name="service" required>
                             <option value="0" disabled selected>Select a service</option>
-                            <option value="vet">Veterinary Consultation</option>
-                            <option value="health">Health & Wellness Plan</option>
-                            <option value="grooming">Professional Grooming</option>
+                            <option value="vet">Full groom package</option>
+                            <option value="health">Full Bath package</option>
+                            <option value="grooming">Priority or Express Service</option>
                         </select>
                     </div>
                 </div>
