@@ -310,21 +310,14 @@
         .btn-reserve-nav { 
             background: var(--primary); 
             color: white !important; 
-            
-            /* Usamos valores fijos para asegurar que se vea bien */
             padding: 10px 25px; 
-            
             border-radius: 25px;
-            
-            /* Esta es la clave: fuerza el ancho del botón */
             min-width: 100px; 
-            
-            /* Centra el texto y asegura comportamiento de bloque */
             text-align: center;
             display: inline-block;
         }
 
-        /* === 🧭 Dropdown Menu - CORREGIDO DEFINITIVO === */
+        /* === 🧭 Dropdown Menu === */
         .dropdown { 
             position: relative; 
             display: inline-block; 
@@ -383,7 +376,7 @@
             padding-left: 25px;
         }
 
-        /* === 📱 Dropdown en móvil - CORREGIDO DEFINITIVO === */
+        /* === 📱 Dropdown en móvil - CORRECCIÓN FINAL === */
         @media (max-width: 768px) {
             .dropdown {
                 position: relative !important;
@@ -416,24 +409,13 @@
                 color: var(--text-light);
                 display: block;
                 text-decoration: none !important;
+                pointer-events: auto !important;
             }
             
             .dropdown-content a:hover {
                 padding-left: 10px;
                 background: transparent;
                 color: var(--primary);
-            }
-            
-            /* Indicador visual para dropdown en móvil */
-            .dropdown > a[aria-haspopup="true"]::after {
-                content: ' ▼';
-                font-size: 0.7rem;
-                margin-left: 4px;
-                transition: transform 0.3s ease;
-            }
-            
-            .dropdown.active > a[aria-haspopup="true"]::after {
-                transform: rotate(180deg);
             }
         }
 
@@ -1070,7 +1052,10 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" id="aboutToggle">About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i></a>
+                    <!-- CORRECCIÓN: href="javascript:void(0)" para evitar salto de página -->
+                    <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false" id="aboutToggle">
+                        About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i>
+                    </a>
                     <ul class="dropdown-content" role="menu" aria-labelledby="aboutToggle">
                         <li role="none"><a href="privacy-policy.html" role="menuitem">Privacy Policy</a></li>
                         <li role="none"><a href="terms-conditions.html" role="menuitem">Terms & Conditions</a></li>
@@ -1792,9 +1777,14 @@
             initMobileMenu();
         }
 
-        // === 🧭 Dropdown Accessibility & Mobile Toggle - CORREGIDO DEFINITIVO ===
+        // === 🧭 Dropdown Accessibility & Mobile Toggle - FINAL FIX ===
         const initDropdown = () => {
             const dropdowns = document.querySelectorAll('.dropdown');
+            
+            // Función auxiliar para detectar móvil
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
             
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('a[aria-haspopup]');
@@ -1802,53 +1792,52 @@
                 
                 if (!toggle || !menu) return;
                 
-                // Toggle con click (solo para móvil)
-                toggle.addEventListener('click', (e) => {
-                    // Solo actuar en móvil
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        // Cerrar otros dropdowns abiertos
-                        document.querySelectorAll('.dropdown.active').forEach(other => {
-                            if (other !== dropdown) {
-                                other.classList.remove('active');
-                                const otherToggle = other.querySelector('a[aria-haspopup]');
-                                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
-                            }
-                        });
-                        
-                        // Toggle del dropdown actual
-                        const isActive = dropdown.classList.toggle('active');
-                        toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-                        
-                        // IMPORTANTE: Detener la propagación aquí también
-                        e.stopImmediatePropagation();
-                    }
-                });
+                // Click en el botón "About"
+                toggle.addEventListener('click', function(e) {
+                    // Solo actuar si estamos en móvil (donde no hay hover)
+                    if (!isMobile()) return;
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    
+                    // Cerrar todos los demás dropdowns
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown && d.classList.contains('active')) {
+                            d.classList.remove('active');
+                            const t = d.querySelector('a[aria-haspopup]');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    // Toggle este dropdown
+                    const isActive = !dropdown.classList.contains('active');
+                    dropdown.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                }, { passive: false });
                 
-                // Prevenir que los enlaces DENTRO del dropdown cierren el menú
-                const dropdownLinks = menu.querySelectorAll('a[role="menuitem"]');
-                dropdownLinks.forEach(link => {
+                // Prevenir que los enlaces del dropdown cierren el menú
+                menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
                     link.addEventListener('click', (e) => {
-                        if (window.innerWidth <= 768) {
-                            // Permitir que el enlace funcione, pero no cerrar el dropdown inmediatamente
+                        if (isMobile()) {
                             e.stopPropagation();
                         }
                     });
                 });
-                
-                // Cerrar dropdown al hacer click FUERA (solo en móvil)
-                document.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        // Solo cerrar si el click NO fue dentro del dropdown
-                        if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
-                            dropdown.classList.remove('active');
-                            toggle.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                }, true); // Usar fase de captura para mayor prioridad
             });
+            
+            // Cerrar dropdown al hacer click fuera (con prioridad)
+            document.addEventListener('click', (e) => {
+                if (!isMobile()) return;
+                
+                dropdowns.forEach(dropdown => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                        const toggle = dropdown.querySelector('a[aria-haspopup]');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }, { capture: true });
         };
 
         if (document.readyState === 'loading') {
