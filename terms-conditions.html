@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms and Conditions of Use - Tri-citys Grooming Pros - Learn about our service policies, SMS messaging, and pet care guidelines.">
+    <meta name="description" content="Privacy Policy of Tri-citys Grooming Pros - Learn how we protect your personal information and pet data.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.tricitysgrooming.com/terms-conditions">
-    <meta name="theme-color" content="#D4AF37">
+    <link rel="canonical" href="https://www.tricitysgrooming.com/privacy-policy">
+    <meta name="theme-color" content="#1e1a17">
     
     <!-- Open Graph & Twitter -->
-    <meta property="og:title" content="Terms and Conditions | Tri-citys Grooming Pros">
-    <meta property="og:description" content="Terms and Conditions of Use - Tri-citys Grooming Pros - Learn about our service policies, SMS messaging, and pet care guidelines.">
+    <meta property="og:title" content="Privacy Policy | Tri-citys Grooming Pros">
+    <meta property="og:description" content="Privacy Policy of Tri-citys Grooming Pros - Learn how we protect your personal information and pet data.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>Terms and Conditions | Tri-citys Grooming Pros</title>
+    <title>Privacy Policy | Tri-citys Grooming Pros</title>
     
     <!-- SEO & Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
             --text-dark: #333333;
             --text-light: #666666;
             --card-bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: #1e1a17;
             --accent: #D96E4A;
             --yellow: #FFB347;
             --success: #28a745;
@@ -93,7 +93,7 @@
             font-weight: 700; 
         }
 
-        /* === 🎯 OPTIMIZED HEADER === */
+        /* === 🎯 HEADER DARK THEME === */
         .site-header {
             background: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -102,12 +102,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
             gap: var(--space-xs);
+        }
+
+        /* Texto blanco en header oscuro para navegación e íconos */
+        .nav-menu a,
+        .menu-toggle,
+        .dropdown > a,
+        .header-social a {
+            color: #ffffff !important;
         }
 
         .logo {
@@ -132,7 +140,6 @@
             align-items: center;
         }
         .header-social a {
-            color: var(--text-dark);
             font-size: 1.2rem;
             transition: var(--transition);
             text-decoration: none !important;
@@ -140,14 +147,16 @@
             align-items: center;
             justify-content: center;
         }
-        .header-social a:hover { color: var(--primary); transform: translateY(-2px); }
+        .header-social a:hover { 
+            color: var(--primary) !important; 
+            transform: translateY(-2px); 
+        }
 
         /* === 📞 Call Button in Header === */
         .header-call-btn {
             display: flex;
             align-items: center;
             gap: 6px;
-            color: var(--text-dark);
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none !important;
@@ -171,7 +180,6 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-dark);
             background: none;
             border: none;
             padding: 5px;
@@ -181,7 +189,7 @@
         /* === 📱 Mobile Social Bar === */
         .mobile-social-bar {
             display: none;
-            background: var(--header-bg);
+            background: #ffffff;
             padding: 4px 15px !important;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
@@ -204,7 +212,7 @@
         }
 
         .mobile-social-bar a {
-            color: var(--text-dark);
+            color: var(--text-dark) !important;
             font-size: 1.1rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -216,7 +224,7 @@
             text-decoration: none !important;
         }
         .mobile-social-bar a:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -234,7 +242,7 @@
         /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
-            color: var(--text-dark);
+            color: var(--text-dark) !important;
             font-size: 1.2rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -242,7 +250,7 @@
             text-decoration: none !important;
         }
         .mobile-call-btn:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -259,30 +267,22 @@
         }
         .nav-menu a {
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 600;
             transition: var(--transition);
             padding: var(--space-xs) 0;
         }
-        .nav-menu a:hover { color: var(--primary); }
+        .nav-menu a:hover { color: var(--primary) !important; }
         .btn-reserve-nav { 
             background: var(--primary); 
             color: white !important; 
-            
-            /* Usamos valores fijos para asegurar que se vea bien */
             padding: 10px 25px; 
-            
             border-radius: 25px;
-            
-            /* Esta es la clave: fuerza el ancho del botón */
             min-width: 100px; 
-            
-            /* Centra el texto y asegura comportamiento de bloque */
             text-align: center;
             display: inline-block;
         }
 
-        /* === 🧭 Dropdown Menu - CORREGIDO DEFINITIVO === */
+        /* === 🧭 Dropdown Menu === */
         .dropdown { 
             position: relative; 
             display: inline-block; 
@@ -301,7 +301,7 @@
             position: absolute;
             background: var(--card-bg);
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 10;
             border-radius: 12px;
             padding: 10px 0;
@@ -318,31 +318,28 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mostrar dropdown SOLO al hacer HOVER en desktop */
+        /* Dropdown en desktop con fondo blanco y texto oscuro */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block !important;
             }
+            .dropdown-content a { 
+                color: var(--text-dark) !important; 
+            }
+            .dropdown-content a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--primary) !important;
+                padding-left: 25px;
+            }
         }
 
-        /* Estilos de los enlaces del dropdown */
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 20px;
-            display: block;
-            text-decoration: none !important;
-            transition: var(--transition);
-        }
-
-        .dropdown-content a:hover,
-        .dropdown-content a:focus {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--primary);
-            padding-left: 25px;
-        }
-
-        /* === 📱 Dropdown en móvil - CORREGIDO === */
+        /* === 📱 Dropdown en móvil === */
         @media (max-width: 768px) {
+            .dropdown {
+                position: relative !important;
+                width: 100%;
+            }
+            
             .dropdown-content {
                 position: static !important;
                 box-shadow: none !important;
@@ -350,25 +347,31 @@
                 border-left: 3px solid var(--primary);
                 margin-left: 20px;
                 padding: 0 0 10px 15px;
-                background: transparent !important;
+                background: rgba(255,255,255,0.05) !important;
                 min-width: auto;
                 display: none !important;
+                width: auto;
+                max-width: 100%;
             }
             
-            /* Mostrar SOLO cuando tenga clase active */
             .dropdown.active .dropdown-content {
                 display: block !important;
+                animation: fadeIn 0.3s ease;
             }
             
             .dropdown-content a {
                 padding: 8px 0;
                 font-size: 0.95rem;
-                color: var(--text-light);
+                color: #e0e0e0 !important;
+                display: block;
+                text-decoration: none !important;
+                pointer-events: auto !important;
             }
             
             .dropdown-content a:hover {
                 padding-left: 10px;
                 background: transparent;
+                color: var(--primary) !important;
             }
         }
 
@@ -382,7 +385,7 @@
                 gap: 5px;
             }
             .header-social { display: none; }
-            .header-call-btn { display: none; } /* Ocultar botón de llamada en desktop móvil */
+            .header-call-btn { display: none; }
             .logo-img { max-height: 70px !important; margin: 0 auto; }
             
             .mobile-social-bar { display: flex !important; flex-direction: column; align-items: center; }
@@ -395,11 +398,12 @@
                 width: 100%;
                 background: var(--header-bg);
                 padding: var(--space-md);
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                box-shadow: 0 10px 10px rgba(0,0,0,0.3);
                 z-index: 998;
             }
             .nav-menu.active { display: block; }
             .nav-menu ul { flex-direction: column; text-align: center; gap: var(--space-sm); }
+            .nav-menu a { color: #ffffff !important; }
             
             .mobile-social-bar .social-links {
                 display: grid !important;
@@ -502,13 +506,7 @@
 
         /* === 📱 WhatsApp Floating === */
         .float-btns { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
-        .float-btn {
-            width: 60px; height: 60px; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; color: white; background: #25d366; 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2); 
-            transition: var(--transition); text-decoration: none;
-        }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; background: #25d366; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); transition: var(--transition); text-decoration: none; }
         .float-btn:hover { transform: scale(1.1); }
 
         /* === 📱 Responsive Policy === */
@@ -538,7 +536,7 @@
 </head>
 <body>
 
-    <!-- 📱 WhatsApp Button -->
+    <!-- 📱 WhatsApp Button (CORREGIDO: 5097780873) -->
     <div class="float-btns">
         <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
            class="float-btn whatsapp" 
@@ -559,7 +557,7 @@
             <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <!-- RingCentral Call Button -->
+            <!-- RingCentral Call Button (5094925802) -->
             <a href="tel:+15094925802" class="header-call-btn" aria-label="Call us at +1 509 492 5802">
                 <i class="fas fa-phone"></i>
                 <span>(509) 492-5802</span>
@@ -574,7 +572,9 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" id="aboutToggle">About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i></a>
+                    <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false" id="aboutToggle">
+                        About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i>
+                    </a>
                     <ul class="dropdown-content" role="menu" aria-labelledby="aboutToggle">
                         <li role="none"><a href="privacy-policy.html" role="menuitem">Privacy Policy</a></li>
                         <li role="none"><a href="terms-conditions.html" role="menuitem">Terms & Conditions</a></li>
@@ -583,20 +583,20 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="consejos-cuidado-perros.html">Blog</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
                 <li><a href="index.html#booking" class="btn-reserve-nav">Book Now</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 📱 Mobile Social Bar (Optimized) -->
+    <!-- 📱 Mobile Social Bar -->
     <div class="mobile-social-bar">
         <div class="social-links">
             <div class="social-icons-group">
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <!-- Mobile Call Button -->
+                <!-- Mobile Call Button (5094925802) -->
                 <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
                     <i class="fas fa-phone"></i>
                 </a>
@@ -609,49 +609,56 @@
 
     <!-- 📄 Policy Hero -->
     <section class="policy-hero">
-        <h1>Terms and Conditions</h1>
+        <h1>Privacy Policy</h1>
         <p>Tri-Citys Grooming Pros</p>
     </section>
 
-    <!-- 📄 Policy Content - EXACT CONTENT PROVIDED (TRANSLATED) -->
+    <!-- 📄 Policy Content -->
     <div class="policy-container">
         <div class="policy-content">
-            <p><strong>Terms and Conditions of Use – Tri-citys Grooming Pros</strong><br>
-            Welcome to Tri-citys Grooming Pros. By accessing our website and using our services, you agree to comply with the following terms and conditions.</p>
+            <p><strong>Privacy Policy of Tri-citys Grooming Pros</strong><br>
+            At Tri-citys Grooming Pros, we value your privacy and the security of your personal information. This Privacy Policy explains how we collect, use, and protect your data when you use our canine grooming services and communicate with us via text messages (SMS).</p>
 
-            <h2>1. SMS Messaging Services (A2P 10DLC Compliance)</h2>
-            <p>By providing your phone number, you expressly agree to receive text messages from Tri-citys Grooming Pros.</p>
+            <h2>1. Information We Collect</h2>
+            <p>We collect personal information necessary to provide our services, which includes:</p>
             <ul>
-                <li><strong>Purpose:</strong> Messages will be sent for appointment reminders, service status notifications ("your pet is ready"), and administrative updates.</li>
-                <li><strong>Frequency:</strong> Message frequency varies based on the number of appointments and user interaction.</li>
-                <li><strong>Fees:</strong> Standard message and data rates may apply according to your mobile carrier.</li>
-                <li><strong>Opt-out:</strong> You can unsubscribe at any time by sending the word STOP to the number from which you receive messages. You will receive a confirmation message of your opt-out.</li>
-                <li><strong>Help:</strong> If you need technical assistance with messages, reply with the word HELP or contact us directly through our website.</li>
+                <li>Owner's full name.</li>
+                <li>Mobile phone number.</li>
+                <li>Pet information (name, breed, service history).</li>
+                <li>Email address.</li>
             </ul>
 
-            <h2>2. Cancellation and Appointment Policies</h2>
-            <p>To maintain the quality of our service and respect our stylists' time:</p>
+            <h2>2. Use of Information for SMS</h2>
+            <p>By providing us with your phone number, you agree to receive communications from us, which may include:</p>
             <ul>
-                <li><strong>Advance Notice:</strong> At least 24 hours' notice is required to cancel or reschedule an appointment.</li>
-                <li><strong>No-Show Fees:</strong> Last-minute cancellations or no-shows may be subject to an administrative fee.</li>
+                <li>Appointment confirmations and reminders.</li>
+                <li>Updates on your pet's status during the service.</li>
+                <li>Exclusive promotions and news from our store (only if you have given your explicit consent).</li>
             </ul>
 
-            <h2>3. Pet Care Consent</h2>
-            <p>By leaving your pet in our care, you agree that:</p>
+            <h2>3. Data Disclosure and Protection (Compliance Requirement)</h2>
+            <p>Tri-citys Grooming Pros does not sell, rent, or share your contact information (especially your phone number and SMS consent data) with third parties for marketing or advertising purposes under any circumstances. Your information is only used internally to manage your relationship with us.</p>
+
+            <h2>4. Consent (Opt-in)</h2>
+            <p>You grant your consent to receive text messages when:</p>
             <ul>
-                <li><strong>Health and Safety:</strong> You have honestly disclosed your pet's behavior (aggression or anxiety) and health conditions.</li>
-                <li><strong>Specialized Services:</strong> You understand that we offer specific services such as cosmetic dental cleaning without anesthesia.</li>
-                <li><strong>Incidents:</strong> In the event of a medical emergency, Tri-citys Grooming Pros will act in the animal's best interest and contact the owner immediately.</li>
+                <li>You complete a contact form on our website.</li>
+                <li>You register your pet for an appointment in person or online.</li>
+                <li>You send an initial text message to our business number.</li>
             </ul>
 
-            <h2>4. Limitation of Liability</h2>
-            <p>Tri-citys Grooming Pros strives to provide safe and professional service. We are not responsible for undisclosed pre-existing health conditions or unexpected reactions to standard grooming processes.</p>
+            <h2>5. How to Cancel (Opt-out)</h2>
+            <p>You have full control over the communications you receive. You can stop receiving text messages at any time:</p>
+            <ul>
+                <li>By replying with the word STOP to any message we send you.</li>
+                <li>By contacting us directly via our email or phone to request the removal of your number from the SMS list.</li>
+            </ul>
 
-            <h2>5. Modifications to Terms</h2>
-            <p>We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of the new terms.</p>
+            <h2>6. Rates and Frequency</h2>
+            <p>Message and data rates may apply according to your mobile service provider. The frequency of messages varies depending on your scheduled appointments and interaction with our service.</p>
 
-            <h2>6. Contact Information</h2>
-            <p>If you have any questions about these Terms and Conditions or how we handle your data, please contact us at:</p>
+            <h2>7. Contact Information</h2>
+            <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at:</p>
             <ul>
                 <li><strong>Email:</strong> tricitysgroomingpros.com</li>
                 <li><strong>Phone:</strong> +1 509 492 5802</li>
@@ -693,7 +700,7 @@
 
     <!-- 🚀 Scripts -->
     <script>
-        // === 📱 Optimized Mobile Menu Handler ===
+        // === 📱 Mobile Menu Handler ===
         const initMobileMenu = () => {
             const menuToggle = document.getElementById('menuToggle');
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -712,6 +719,7 @@
             
             navMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
+                    if (link.getAttribute('aria-haspopup') === 'true') return;
                     navMenu.classList.remove('active');
                     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
                     if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
@@ -733,44 +741,57 @@
             initMobileMenu();
         }
 
-        // === 🧭 Dropdown Accessibility & Mobile Toggle - CORREGIDO ===
+        // === 🧭 Dropdown Toggle ===
         const initDropdown = () => {
             const dropdowns = document.querySelectorAll('.dropdown');
             
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+            
             dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('a[aria-haspopup]');
-                const menu = dropdown.querySelector('.dropdown-content');
+                const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+                if (!toggle) return;
                 
-                if (!toggle || !menu) return;
-                
-                // Toggle con click (solo para móvil)
                 toggle.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        // Cerrar otros dropdowns abiertos
-                        document.querySelectorAll('.dropdown.active').forEach(other => {
-                            if (other !== dropdown) {
-                                other.classList.remove('active');
-                                other.querySelector('a[aria-haspopup]')?.setAttribute('aria-expanded', 'false');
-                            }
-                        });
-                        
-                        // Toggle actual
-                        const isActive = dropdown.classList.toggle('active');
-                        toggle.setAttribute('aria-expanded', isActive);
-                    }
-                });
+                    if (!isMobile()) return;
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown && d.classList.contains('active')) {
+                            d.classList.remove('active');
+                            const t = d.querySelector('a[aria-haspopup="true"]');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
+                    const isActive = dropdown.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                }, { passive: false });
                 
-                // Cerrar al hacer click fuera
-                document.addEventListener('click', (e) => {
+                const menu = dropdown.querySelector('.dropdown-content');
+                if (menu) {
+                    menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            if (isMobile()) e.stopPropagation();
+                        });
+                    });
+                }
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!isMobile()) return;
+                dropdowns.forEach(dropdown => {
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('active');
-                        toggle.setAttribute('aria-expanded', 'false');
+                        const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
                     }
                 });
-            });
+            }, { capture: true });
         };
 
         if (document.readyState === 'loading') {
