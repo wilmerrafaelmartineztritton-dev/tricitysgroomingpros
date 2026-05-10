@@ -152,10 +152,11 @@
             gap: var(--space-xs);
         }
 
-        /* CORRECCIÓN 1: Texto blanco SOLO en navegación principal, NO en redes sociales */
+        /* Texto blanco en header oscuro para navegación y íconos */
         .nav-menu a,
         .menu-toggle,
-        .dropdown > a:not(.header-social a) {
+        .dropdown > a,
+        .header-social a {
             color: #ffffff !important;
         }
 
@@ -181,8 +182,6 @@
             align-items: center;
         }
         .header-social a {
-            /* CORRECCIÓN 1: Restaurar color original de íconos de redes */
-            color: var(--text-dark);
             font-size: 1.2rem;
             transition: var(--transition);
             text-decoration: none !important;
@@ -191,7 +190,7 @@
             justify-content: center;
         }
         .header-social a:hover { 
-            color: var(--primary); 
+            color: var(--primary) !important; 
             transform: translateY(-2px); 
         }
 
@@ -232,9 +231,9 @@
         /* === 📱 Mobile Social Bar === */
         .mobile-social-bar {
             display: none;
-            background: #ffffff; /* ← CORRECCIÓN: ; agregado */
+            background: #ffffff;
             padding: 4px 15px !important;
-            border-bottom: 1px solid rgba(0,0,0,0.05); /* ← CORRECCIÓN: borde oscuro */
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .mobile-social-bar .social-links {
@@ -255,7 +254,7 @@
         }
 
         .mobile-social-bar a {
-            color: var(--text-dark) !important; /* ← CORRECCIÓN: íconos oscuros sobre fondo blanco */
+            color: var(--text-dark) !important;
             font-size: 1.1rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -277,7 +276,7 @@
             justify-self: end;
             display: flex !important;
             font-size: 1.3rem !important;
-            color: var(--text-dark) !important; /* ← CORRECCIÓN: menú hamburguesa oscuro */
+            color: var(--text-dark) !important;
             padding: 3px !important;
             margin: 0;
         }
@@ -285,7 +284,7 @@
         /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
-            color: var(--text-dark) !important; /* ← CORRECCIÓN: teléfono oscuro */
+            color: var(--text-dark) !important;
             font-size: 1.2rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -361,7 +360,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* CORRECCIÓN 2: Dropdown en desktop con fondo blanco y texto oscuro */
+        /* Dropdown en desktop con fondo blanco y texto oscuro */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block !important;
@@ -376,7 +375,7 @@
             }
         }
 
-        /* === 📱 Dropdown en móvil - CORREGIDO === */
+        /* === 📱 Dropdown en móvil === */
         @media (max-width: 768px) {
             .dropdown {
                 position: relative !important;
@@ -397,7 +396,6 @@
                 max-width: 100%;
             }
             
-            /* Mostrar SOLO cuando tenga clase active */
             .dropdown.active .dropdown-content {
                 display: block !important;
                 animation: fadeIn 0.3s ease;
@@ -1475,7 +1473,6 @@
             
             navMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    // No cerrar menú si es el toggle del dropdown
                     if (link.getAttribute('aria-haspopup') === 'true') return;
                     navMenu.classList.remove('active');
                     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
@@ -1498,7 +1495,7 @@
             initMobileMenu();
         }
 
-        // === 🧭 Dropdown Toggle - FINAL FIX ===
+        // === 🧭 Dropdown Toggle ===
         const initDropdown = () => {
             const dropdowns = document.querySelectorAll('.dropdown');
             
@@ -1517,7 +1514,6 @@
                     e.stopPropagation();
                     e.stopImmediatePropagation();
                     
-                    // Cerrar otros dropdowns
                     dropdowns.forEach(d => {
                         if (d !== dropdown && d.classList.contains('active')) {
                             d.classList.remove('active');
@@ -1526,12 +1522,10 @@
                         }
                     });
                     
-                    // Toggle este dropdown
                     const isActive = dropdown.classList.toggle('active');
                     toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
                 }, { passive: false });
                 
-                // Prevenir cierre al hacer clic en enlaces del dropdown
                 const menu = dropdown.querySelector('.dropdown-content');
                 if (menu) {
                     menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
@@ -1542,7 +1536,6 @@
                 }
             });
             
-            // Cerrar al hacer clic fuera
             document.addEventListener('click', (e) => {
                 if (!isMobile()) return;
                 dropdowns.forEach(dropdown => {
