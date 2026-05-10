@@ -163,6 +163,31 @@
         }
         .header-social a:hover { color: var(--primary); transform: translateY(-2px); }
 
+        /* === 📞 Call Button in Header === */
+        .header-call-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none !important;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white !important;
+            border-radius: 25px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .header-call-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 110, 74, 0.3);
+        }
+        .header-call-btn i {
+            font-size: 1rem;
+        }
+
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -225,6 +250,22 @@
             color: var(--text-dark) !important;
             padding: 3px !important;
             margin: 0;
+        }
+
+        /* === 📱 Mobile Call Button === */
+        .mobile-call-btn {
+            display: none;
+            color: var(--text-dark);
+            font-size: 1.2rem !important;
+            padding: 3px !important;
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none !important;
+        }
+        .mobile-call-btn:hover {
+            color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.1);
         }
 
         /* === 🧭 Navigation === */
@@ -362,6 +403,7 @@
                 gap: 5px;
             }
             .header-social { display: none; }
+            .header-call-btn { display: none; } /* Ocultar botón de llamada en desktop móvil */
             .logo-img { max-height: 35px !important; margin: 0 auto; }
             
             .mobile-social-bar { display: flex !important; flex-direction: column; align-items: center; }
@@ -679,7 +721,7 @@
 
     <!-- 📱 WhatsApp Button -->
     <div class="float-btns">
-        <a href="https://wa.me/15094925802?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" class="float-btn whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" class="float-btn whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <!-- 🎯 Optimized Header -->
@@ -688,10 +730,15 @@
             <img src="images/logo.png" alt="Tri-Citys Grooming Pros" class="logo-img" width="200" height="55" loading="eager">
         </a>
         
-        <nav class="header-social" aria-label="Social Media">
+        <nav class="header-social" aria-label="Social Media & Contact">
             <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <!-- RingCentral Call Button -->
+            <a href="tel:+15094925802" class="header-call-btn" aria-label="Call us at +1 509 492 5802">
+                <i class="fas fa-phone"></i>
+                <span>(509) 492-5802</span>
+            </a>
         </nav>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
@@ -704,8 +751,8 @@
                 <li class="dropdown">
                     <a href="#" aria-haspopup="true" aria-expanded="false" id="aboutToggle">About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i></a>
                     <ul class="dropdown-content" role="menu" aria-labelledby="aboutToggle">
-                        <li role="none"><a href="#" role="menuitem">Privacy Policy</a></li>
-                        <li role="none"><a href="#" role="menuitem">Terms & Conditions</a></li>
+                        <li role="none"><a href="privacy-policy.html" role="menuitem">Privacy Policy</a></li>
+                        <li role="none"><a href="terms-conditions.html" role="menuitem">Terms & Conditions</a></li>
                     </ul>
                 </li>
                 <li><a href="index.html#services">Services</a></li>
@@ -724,6 +771,10 @@
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Mobile Call Button -->
+                <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
+                    <i class="fas fa-phone"></i>
+                </a>
             </div>
             <button class="menu-toggle mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <i class="fas fa-bars" aria-hidden="true"></i>
@@ -928,8 +979,8 @@
             </div>
             <div class="footer-links">
                 <h4>Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-conditions.html">Terms & Conditions</a>
                 <a href="#">Cancellation Policy</a>
             </div>
             <div>
