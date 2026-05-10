@@ -135,7 +135,7 @@
             font-weight: 700; 
         }
 
-        /* === 🎯 HEADER DARK THEME === */
+        /* Header Dark Theme */
         .site-header {
             background: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -152,7 +152,6 @@
             gap: var(--space-xs);
         }
 
-        /* Texto blanco en header oscuro para navegación y íconos */
         .nav-menu a,
         .menu-toggle,
         .dropdown > a,
@@ -194,7 +193,6 @@
             transform: translateY(-2px); 
         }
 
-        /* === 📞 Call Button in Header === */
         .header-call-btn {
             display: flex;
             align-items: center;
@@ -228,7 +226,7 @@
             flex-shrink: 0;
         }
 
-        /* === 📱 Mobile Social Bar === */
+        /* Mobile Social Bar */
         .mobile-social-bar {
             display: none;
             background: #ffffff;
@@ -281,7 +279,6 @@
             margin: 0;
         }
 
-        /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
             color: var(--text-dark) !important;
@@ -297,7 +294,7 @@
             transform: scale(1.1);
         }
 
-        /* === 🧭 Navigation === */
+        /* Navigation */
         .nav-menu { display: flex; }
         .nav-menu ul {
             display: flex;
@@ -324,7 +321,7 @@
             display: inline-block;
         }
 
-        /* === 🧭 Dropdown Menu === */
+        /* Dropdown Menu */
         .dropdown { 
             position: relative; 
             display: inline-block; 
@@ -360,7 +357,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Dropdown en desktop con fondo blanco y texto oscuro */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block !important;
@@ -375,7 +371,6 @@
             }
         }
 
-        /* === 📱 Dropdown en móvil === */
         @media (max-width: 768px) {
             .dropdown {
                 position: relative !important;
@@ -417,7 +412,7 @@
             }
         }
 
-        /* === 📱 Responsive Header === */
+        /* Responsive Header */
         @media (max-width: 768px) {
             .site-header {
                 padding: 8px 15px;
@@ -464,7 +459,7 @@
             .mobile-social-bar .menu-toggle { font-size: 1.2rem !important; }
         }
 
-        /* === 🎠 HERO SLIDER === */
+        /* Hero Slider */
         .hero {
             position: relative;
             height: 75vh;
@@ -580,7 +575,7 @@
         }
         .btn-cta:hover { transform: translateY(-3px) scale(1.05); background: var(--primary); }
 
-        /* === 📐 Sections === */
+        /* Sections */
         section { padding: var(--space-xl) 10% var(--space-lg); }
         .section-title { 
             text-align: center; 
@@ -589,7 +584,7 @@
             font-size: 2.2rem; 
         }
 
-        /* === 🐾 Intro Section === */
+        /* Intro Section */
         .intro-section {
             background: rgba(255, 255, 255, 0.6);
             padding: var(--space-xl) 10%;
@@ -614,7 +609,7 @@
             .intro-section h2 { font-size: 1.5rem; }
         }
 
-        /* === 🐾 Service Cards === */
+        /* Service Cards */
         .services-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -652,7 +647,7 @@
         .service-card h3 { color: var(--text-dark); margin-bottom: var(--space-xs); }
         .service-card p { color: var(--text-light); font-size: 0.95rem; }
 
-        /* === 🎠 Services Carousel === */
+        /* Services Carousel */
         .services-carousel {
             position: relative;
             overflow: hidden;
@@ -686,7 +681,7 @@
         .services-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; transition: var(--transition); }
         .services-dot.active { background: var(--secondary); transform: scale(1.2); }
 
-        /* === 💬 Testimonials === */
+        /* Testimonials */
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
         .testimonial-card { background: var(--card-bg); padding: var(--space-md); border-radius: var(--radius); border-left: 4px solid var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
         .testimonial-card::before { content: '"'; position: absolute; top: 10px; left: 15px; font-size: 3rem; color: var(--secondary); opacity: 0.3; font-family: Georgia, serif; line-height: 1; }
@@ -695,7 +690,7 @@
         .testimonial-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
         .testimonial-rating { color: var(--yellow); margin-bottom: var(--space-xs); }
 
-        /* === 🎨 Gallery === */
+        /* Gallery */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); }
         .gallery-card { background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
         .gallery-card img { width: 100%; height: 250px; object-fit: cover; display: block; }
@@ -704,12 +699,12 @@
         .gallery-card-content p { color: var(--text-light); font-size: 0.9rem; margin-bottom: var(--space-xs); }
         .gallery-card .btn-cta { padding: 8px 20px; font-size: 0.9rem; margin-top: 10px; display: inline-block; }
 
-        /* === 🏷️ Trust Badges === */
+        /* Trust Badges */
         .trust-badges { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; margin: var(--space-md) 0; padding: var(--space-sm); background: rgba(212, 175, 55, 0.1); border-radius: 12px; }
         .badge { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
         .badge i { color: var(--secondary); font-size: 1.2rem; }
 
-        /* === 📋 Form === */
+        /* Form */
         .booking-container { background: var(--card-bg); max-width: 800px; margin: 0 auto; padding: var(--space-lg); border-radius: var(--radius); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: var(--space-sm); }
         label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--text-dark); }
@@ -720,10 +715,7 @@
         .form-msg.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         .hp-field { display: none !important; opacity: 0; height: 0; width: 0; overflow: hidden; }
 
-        /* === 📱 Phone Input Enhancements === */
-        #phone {
-            inputmode: numeric;
-        }
+        /* Phone Input Validation Styles */
         #phone:invalid:not(:placeholder-shown) {
             border-color: var(--error) !important;
         }
@@ -736,7 +728,7 @@
             }
         }
 
-        /* === ❓ FAQ === */
+        /* FAQ */
         .faq-container { max-width: 800px; margin: 0 auto; }
         details { background: var(--card-bg); margin-bottom: var(--space-sm); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: var(--transition); }
         details[open] { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
@@ -745,7 +737,7 @@
         details[open] summary::after { transform: rotate(45deg); }
         details p { padding: 0 var(--space-sm) var(--space-sm); color: var(--text-light); }
 
-        /* === 📰 Blog Carousel === */
+        /* Blog Carousel */
         .blog-carousel { position: relative; overflow: hidden; padding: var(--space-sm) 0; }
         .blog-track { display: flex; gap: var(--space-md); transition: transform 0.4s ease; padding: var(--space-xs) 0; }
         .blog-card { flex: 0 0 calc(33.333% - 16px); background: var(--card-bg); border-radius: var(--radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); }
@@ -761,18 +753,18 @@
         .blog-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; transition: var(--transition); }
         .blog-dot.active { background: var(--secondary); transform: scale(1.2); }
 
-        /* === 🦶 Footer === */
+        /* Footer */
         footer { background: var(--secondary); color: white; padding: var(--space-xl) 10% var(--space-md); z-index: 1; position: relative; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); margin-bottom: var(--space-lg); }
         .footer-links a { color: white; text-decoration: none; display: block; margin-bottom: 8px; opacity: 0.9; }
         .footer-links a:hover { opacity: 1; text-decoration: underline; }
 
-        /* === 📱 WhatsApp Floating === */
+        /* WhatsApp Floating */
         .float-btns { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
         .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; background: #25d366; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); transition: var(--transition); text-decoration: none; }
         .float-btn:hover { transform: scale(1.1); }
 
-        /* === 📱 Responsive === */
+        /* Responsive */
         @media (max-width: 768px) {
             .intro-section { padding: var(--space-lg) 5%; }
             .hero { height: 70vh; min-height: 450px; }
@@ -813,7 +805,7 @@
 </head>
 <body>
 
-    <!-- 📱 WhatsApp Button (CORREGIDO: 5097780873) -->
+    <!-- WhatsApp Button (CORREGIDO: 5097780873) -->
     <div class="float-btns">
         <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
            class="float-btn whatsapp" 
@@ -824,7 +816,7 @@
         </a>
     </div>
 
-    <!-- 🎯 Optimized Header -->
+    <!-- Header -->
     <header class="site-header">
         <a href="index.html" class="logo" aria-label="Tri-Citys Grooming Pros Home">
             <img src="images/logo.png" alt="Tri-Citys Grooming Pros" class="logo-img" width="200" height="55" loading="eager">
@@ -834,7 +826,6 @@
             <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <!-- RingCentral Call Button (5094925802) -->
             <a href="tel:+15094925802" class="header-call-btn" aria-label="Call us at +1 509 492 5802">
                 <i class="fas fa-phone"></i>
                 <span>(509) 492-5802</span>
@@ -866,14 +857,13 @@
         </nav>
     </header>
 
-    <!-- 📱 Mobile Social Bar -->
+    <!-- Mobile Social Bar -->
     <div class="mobile-social-bar">
         <div class="social-links">
             <div class="social-icons-group">
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <!-- Mobile Call Button (5094925802) -->
                 <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
                     <i class="fas fa-phone"></i>
                 </a>
@@ -884,7 +874,7 @@
         </div>
     </div>
 
-    <!-- 🎠 Hero Slider -->
+    <!-- Hero Slider -->
     <section class="hero" id="home">
         <div class="slider-container" id="hero-slider" role="region" aria-label="Pet care tips" aria-roledescription="carousel">
             <div class="slider-slide active" style="background-image:url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=1920')" role="group" aria-label="1 of 5: Nutrition">
@@ -899,8 +889,8 @@
             <div class="slider-slide" style="background-image:url('images/salud_dental.png')" role="group" aria-label="4 of 5: Dental Health">
                 <img src="images/salud_dental.png" alt="Dental cleaning" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
-            <div class="slider-slide" style="background-image:url('images/cuidado-uñas.png')" role="group" aria-label="5 of 5: Nail Care">
-                <img src="images/cuidado-uñas.png" alt="Nail trimming" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
+            <div class="slider-slide" style="background-image:url('images/cuidado-unas.png')" role="group" aria-label="5 of 5: Nail Care">
+                <img src="images/cuidado-unas.png" alt="Nail trimming" loading="lazy" width="1920" height="1080" style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
             </div>
         </div>
         <div class="slider-content">
@@ -919,7 +909,7 @@
         </div>
     </section>
 
-    <!-- 🐾 Intro Section -->
+    <!-- Intro Section -->
     <section class="intro-section">
         <h2>Comprehensive care and low-stress grooming for your pet.</h2>
         <p>At Tri-Citys Grooming Pros, we understand your pet is a valued member of your family. We're dedicated to enhancing their quality of life by combining preventive health care with professional aesthetics in a safe, loving environment in Pasco, WA.</p>
@@ -927,7 +917,7 @@
         <p>We exclusively use a premium line of eco-friendly, hypoallergenic products, veterinarian-approved, that care for your companion's skin and coat without harsh chemicals.</p>
     </section>
 
-    <!-- 🏥 Services -->
+    <!-- Services -->
     <section id="services">
         <h2 class="section-title">Our Specialized Services</h2>
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-lg);color:var(--text-light)">
@@ -973,7 +963,7 @@
         </div>
     </section>
 
-    <!-- 💬 Testimonials -->
+    <!-- Testimonials -->
     <section id="testimonials" style="background:rgba(255,255,255,0.7)">
         <h2 class="section-title">What Our Clients Say</h2>
         <div class="testimonials-grid">
@@ -1010,7 +1000,7 @@
         </div>
     </section>
 
-    <!-- 🎨 Gallery -->
+    <!-- Gallery -->
     <section id="gallery">
         <h2 class="section-title">Real Transformations</h2>
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-md);color:var(--text-light)">
@@ -1044,7 +1034,7 @@
         </div>
     </section>
 
-    <!-- 📅 Booking (CON CAMPO DE TELÉFONO AGREGADO) -->
+    <!-- Booking (CON CAMPO DE TELÉFONO) -->
     <section id="booking">
         <h2 class="section-title">Book Your Appointment</h2>
         <div class="booking-container">
@@ -1056,7 +1046,6 @@
             <form id="booking-form" action="https://formspree.io/f/xeenpdvb" method="POST">
                 <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                 
-                <!-- Fila 1: Nombre + Email -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="owner_name">Owner's Name</label>
@@ -1068,7 +1057,6 @@
                     </div>
                 </div>
                 
-                <!-- Fila 2: Mascota + Servicio -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="dog_name">Your Dog's Name</label>
@@ -1085,16 +1073,15 @@
                     </div>
                 </div>
                 
-                <!-- ✅ NUEVO: Campo de Teléfono -->
+                <!-- Phone Field -->
                 <div class="form-group">
                     <label for="phone">Phone Number <span style="color:var(--primary)">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Ex: (555) 123-4567" pattern="[0-9\s\-\+\(\)]{7,20}" inputmode="numeric">
+                    <input type="tel" id="phone" name="phone" required placeholder="Ex: (555) 123-4567" pattern="[0-9\s\-\+\(\)]{7,20}">
                     <small style="color:var(--text-light);font-size:0.85rem;display:block;margin-top:4px">
-                        <i class="fas fa-info-circle"></i> We'll contact you to confirm your appointment
+                        <i class="fas fa-info-circle"></i> We will contact you to confirm your appointment
                     </small>
                 </div>
                 
-                <!-- Fila 3: Fecha + Hora -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="date">Preferred Date</label>
@@ -1115,7 +1102,7 @@
         </div>
     </section>
 
-    <!-- ❓ FAQ -->
+    <!-- FAQ -->
     <section id="faq">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-container">
@@ -1138,7 +1125,7 @@
         </div>
     </section>
 
-    <!-- 📰 Blog -->
+    <!-- Blog -->
     <section id="blog">
         <h2 class="section-title">Wellness Blog</h2>
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-lg);color:var(--text-light)">
@@ -1213,7 +1200,7 @@
         </div>
     </section>
 
-    <!-- 📍 Contact -->
+    <!-- Contact -->
     <section id="contact">
         <h2 class="section-title">Contact Us</h2>
         <p style="text-align:center;max-width:700px;margin:0 auto var(--space-lg);color:var(--text-light)">
@@ -1224,7 +1211,7 @@
                 <h3 style="margin-bottom:var(--space-sm)">Contact Information</h3>
                 <p><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:8px"></i> 808 S 10th Ave, Pasco, Washington 99301</p>
                 <p><i class="fas fa-phone" style="color:var(--primary);margin-right:8px"></i> +1 509 492 5802</p>
-                <p><i class="fas fa-envelope" style="color:var(--primary);margin-right:8px"></i> tricitysgromingpros.com</p>
+                <p><i class="fas fa-envelope" style="color:var(--primary);margin-right:8px"></i> tricitysgroomingpros.com</p>
                 <br>
                 <h4>Hours:</h4>
                 <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
@@ -1240,7 +1227,7 @@
         </div>
     </section>
 
-    <!-- 🦶 Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div>
@@ -1271,10 +1258,10 @@
         </div>
     </footer>
 
-    <!-- 🚀 Scripts -->
+    <!-- Scripts -->
     <script>
     (function(){
-        // === 🎠 HERO SLIDER ===
+        // Hero Slider
         const sliderTips = [
             {tip:"Technical brushing according to coat type",desc:"It's not just about preventing knots, but also about activating the skin's natural oils and giving a spectacular shine."},
             {tip:"Hygiene",desc:"Maintain regular brushing and check their nails, ears, and skin routinely."},
@@ -1293,83 +1280,88 @@
             currentIndex: 0,
             totalSlides: 5,
             autoplay: true,
-            autoplayInterval: 6e3,
+            autoplayInterval: 6000,
             autoplayTimer: null,
             
-            init() {
+            init: function() {
                 this.setupEvents();
                 this.startAutoplay();
                 this.setupKeyboard();
                 this.setupTouch();
             },
             
-            goToSlide(index) {
-                if(index<0) index=this.totalSlides-1;
-                if(index>=this.totalSlides) index=0;
-                this.slides.forEach(slide=>slide.classList.remove('active'));
+            goToSlide: function(index) {
+                if(index < 0) index = this.totalSlides - 1;
+                if(index >= this.totalSlides) index = 0;
+                this.slides.forEach(function(slide) { slide.classList.remove('active'); });
                 this.slides[index].classList.add('active');
-                this.dots.forEach(dot=>{
+                this.dots.forEach(function(dot) {
                     dot.classList.remove('active');
-                    dot.setAttribute('aria-selected','false')
+                    dot.setAttribute('aria-selected', 'false');
                 });
                 this.dots[index].classList.add('active');
-                this.dots[index].setAttribute('aria-selected','true');
-                this.tipEl.textContent=sliderTips[index].tip;
-                this.descEl.textContent=sliderTips[index].desc;
-                this.tipEl.style.animation='none';
-                this.descEl.style.animation='none';
+                this.dots[index].setAttribute('aria-selected', 'true');
+                this.tipEl.textContent = sliderTips[index].tip;
+                this.descEl.textContent = sliderTips[index].desc;
+                this.tipEl.style.animation = 'none';
+                this.descEl.style.animation = 'none';
                 void this.tipEl.offsetWidth;
-                this.tipEl.style.animation='slideUp 0.6s ease forwards';
-                this.descEl.style.animation='slideUp 0.6s ease 0.2s forwards';
-                this.currentIndex=index;
+                this.tipEl.style.animation = 'slideUp 0.6s ease forwards';
+                this.descEl.style.animation = 'slideUp 0.6s ease 0.2s forwards';
+                this.currentIndex = index;
             },
             
-            next(){ this.goToSlide(this.currentIndex+1) },
-            prev(){ this.goToSlide(this.currentIndex-1) },
+            next: function() { this.goToSlide(this.currentIndex + 1); },
+            prev: function() { this.goToSlide(this.currentIndex - 1); },
             
-            setupEvents() {
-                this.nextBtn.addEventListener('click',()=>{this.next();this.resetAutoplay()});
-                this.prevBtn.addEventListener('click',()=>{this.prev();this.resetAutoplay()});
-                this.dots.forEach((dot,i)=>{
-                    dot.addEventListener('click',()=>{this.goToSlide(i);this.resetAutoplay()})
+            setupEvents: function() {
+                var self = this;
+                this.nextBtn.addEventListener('click', function() { self.next(); self.resetAutoplay(); });
+                this.prevBtn.addEventListener('click', function() { self.prev(); self.resetAutoplay(); });
+                this.dots.forEach(function(dot, i) {
+                    dot.addEventListener('click', function() { self.goToSlide(i); self.resetAutoplay(); });
                 });
-                const hero=document.querySelector('.hero');
-                hero.addEventListener('mouseenter',()=>this.pauseAutoplay());
-                hero.addEventListener('mouseleave',()=>this.startAutoplay())
+                var hero = document.querySelector('.hero');
+                hero.addEventListener('mouseenter', function() { self.pauseAutoplay(); });
+                hero.addEventListener('mouseleave', function() { self.startAutoplay(); });
             },
             
-            setupKeyboard() {
-                document.addEventListener('keydown',e=>{
-                    if(e.key==='ArrowLeft'){this.prev();this.resetAutoplay()}
-                    if(e.key==='ArrowRight'){this.next();this.resetAutoplay()}
-                })
+            setupKeyboard: function() {
+                var self = this;
+                document.addEventListener('keydown', function(e) {
+                    if(e.key === 'ArrowLeft') { self.prev(); self.resetAutoplay(); }
+                    if(e.key === 'ArrowRight') { self.next(); self.resetAutoplay(); }
+                });
             },
             
-            setupTouch() {
-                let touchStartX=0; let touchEndX=0;
-                const hero=document.querySelector('.hero');
-                hero.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
-                hero.addEventListener('touchend',e=>{
-                    touchEndX=e.changedTouches[0].screenX;
-                    if(touchStartX-touchEndX>50){this.next();this.resetAutoplay()}
-                    if(touchEndX-touchStartX>50){this.prev();this.resetAutoplay()}
-                },{passive:true})
+            setupTouch: function() {
+                var self = this;
+                var touchStartX = 0;
+                var touchEndX = 0;
+                var hero = document.querySelector('.hero');
+                hero.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+                hero.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if(touchStartX - touchEndX > 50) { self.next(); self.resetAutoplay(); }
+                    if(touchEndX - touchStartX > 50) { self.prev(); self.resetAutoplay(); }
+                }, {passive: true});
             },
             
-            startAutoplay() {
+            startAutoplay: function() {
+                var self = this;
                 if(!this.autoplay) return;
-                this.autoplayTimer=setInterval(()=>this.next(),this.autoplayInterval)
+                this.autoplayTimer = setInterval(function() { self.next(); }, this.autoplayInterval);
             },
-            pauseAutoplay() {
-                if(this.autoplayTimer) clearInterval(this.autoplayTimer)
+            pauseAutoplay: function() {
+                if(this.autoplayTimer) clearInterval(this.autoplayTimer);
             },
-            resetAutoplay() {
+            resetAutoplay: function() {
                 this.pauseAutoplay();
-                this.startAutoplay()
+                this.startAutoplay();
             }
         };
 
-        // === 🎠 SERVICES CAROUSEL ===
+        // Services Carousel
         const servicesCarousel = {
             track: document.getElementById('services-track'),
             dots: document.querySelectorAll('.services-dot'),
@@ -1377,58 +1369,62 @@
             currentIndex: 0,
             totalCards: 0,
             
-            init() {
+            init: function() {
                 this.totalCards = this.cards.length;
                 this.setupEvents();
                 this.setupTouch();
                 this.updateTrack();
             },
             
-            goToCard(index) {
-                if(index<0) index=this.totalCards-1;
-                if(index>=this.totalCards) index=0;
-                this.currentIndex=index;
+            goToCard: function(index) {
+                if(index < 0) index = this.totalCards - 1;
+                if(index >= this.totalCards) index = 0;
+                this.currentIndex = index;
                 this.updateTrack();
                 this.updateDots();
             },
             
-            next(){ this.goToCard(this.currentIndex+1) },
-            prev(){ this.goToCard(this.currentIndex-1) },
+            next: function() { this.goToCard(this.currentIndex + 1); },
+            prev: function() { this.goToCard(this.currentIndex - 1); },
             
-            updateTrack() {
-                if(this.cards.length===0) return;
-                const cardWidth = this.cards[0].offsetWidth + 24;
-                this.track.style.transform = `translateX(-${this.currentIndex*cardWidth}px)`
+            updateTrack: function() {
+                if(this.cards.length === 0) return;
+                var cardWidth = this.cards[0].offsetWidth + 24;
+                this.track.style.transform = 'translateX(-' + (this.currentIndex * cardWidth) + 'px)';
             },
             
-            updateDots() {
-                this.dots.forEach((dot,i)=>{
-                    dot.classList.toggle('active',i===this.currentIndex);
-                    dot.setAttribute('aria-selected',i===this.currentIndex?'true':'false')
-                })
-            },
-            
-            setupEvents() {
-                this.dots.forEach((dot,i)=>{
-                    dot.addEventListener('click',()=>this.goToCard(i))
+            updateDots: function() {
+                var self = this;
+                this.dots.forEach(function(dot, i) {
+                    dot.classList.toggle('active', i === self.currentIndex);
+                    dot.setAttribute('aria-selected', i === self.currentIndex ? 'true' : 'false');
                 });
-                if(window.innerWidth>768) {
-                    setInterval(()=>this.next(),8e3)
+            },
+            
+            setupEvents: function() {
+                var self = this;
+                this.dots.forEach(function(dot, i) {
+                    dot.addEventListener('click', function() { self.goToCard(i); });
+                });
+                if(window.innerWidth > 768) {
+                    setInterval(function() { self.next(); }, 8000);
                 }
             },
             
-            setupTouch() {
-                let touchStartX=0; let touchEndX=0;
-                this.track.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
-                this.track.addEventListener('touchend',e=>{
-                    touchEndX=e.changedTouches[0].screenX;
-                    if(touchStartX-touchEndX>50) this.next();
-                    if(touchEndX-touchStartX>50) this.prev()
-                },{passive:true})
+            setupTouch: function() {
+                var self = this;
+                var touchStartX = 0;
+                var touchEndX = 0;
+                this.track.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+                this.track.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if(touchStartX - touchEndX > 50) self.next();
+                    if(touchEndX - touchStartX > 50) self.prev();
+                }, {passive: true});
             }
         };
 
-        // === 🎠 BLOG CAROUSEL ===
+        // Blog Carousel
         const blogCarousel = {
             track: document.getElementById('blog-track'),
             dots: document.querySelectorAll('.blog-dot'),
@@ -1436,76 +1432,80 @@
             currentIndex: 0,
             totalCards: 0,
             
-            init() {
+            init: function() {
                 this.totalCards = this.cards.length;
                 this.setupEvents();
                 this.setupTouch();
                 this.updateTrack();
             },
             
-            goToCard(index) {
-                if(index<0) index=this.totalCards-1;
-                if(index>=this.totalCards) index=0;
-                this.currentIndex=index;
+            goToCard: function(index) {
+                if(index < 0) index = this.totalCards - 1;
+                if(index >= this.totalCards) index = 0;
+                this.currentIndex = index;
                 this.updateTrack();
                 this.updateDots();
             },
             
-            next(){ this.goToCard(this.currentIndex+1) },
-            prev(){ this.goToCard(this.currentIndex-1) },
+            next: function() { this.goToCard(this.currentIndex + 1); },
+            prev: function() { this.goToCard(this.currentIndex - 1); },
             
-            updateTrack() {
-                if(this.cards.length===0) return;
-                const cardWidth = this.cards[0].offsetWidth + 24;
-                this.track.style.transform = `translateX(-${this.currentIndex*cardWidth}px)`
+            updateTrack: function() {
+                if(this.cards.length === 0) return;
+                var cardWidth = this.cards[0].offsetWidth + 24;
+                this.track.style.transform = 'translateX(-' + (this.currentIndex * cardWidth) + 'px)';
             },
             
-            updateDots() {
-                this.dots.forEach((dot,i)=>{
-                    dot.classList.toggle('active',i===this.currentIndex);
-                    dot.setAttribute('aria-selected',i===this.currentIndex?'true':'false')
-                })
-            },
-            
-            setupEvents() {
-                this.dots.forEach((dot,i)=>{
-                    dot.addEventListener('click',()=>this.goToCard(i))
+            updateDots: function() {
+                var self = this;
+                this.dots.forEach(function(dot, i) {
+                    dot.classList.toggle('active', i === self.currentIndex);
+                    dot.setAttribute('aria-selected', i === self.currentIndex ? 'true' : 'false');
                 });
-                if(window.innerWidth>768) {
-                    setInterval(()=>this.next(),8e3)
+            },
+            
+            setupEvents: function() {
+                var self = this;
+                this.dots.forEach(function(dot, i) {
+                    dot.addEventListener('click', function() { self.goToCard(i); });
+                });
+                if(window.innerWidth > 768) {
+                    setInterval(function() { self.next(); }, 8000);
                 }
             },
             
-            setupTouch() {
-                let touchStartX=0; let touchEndX=0;
-                this.track.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
-                this.track.addEventListener('touchend',e=>{
-                    touchEndX=e.changedTouches[0].screenX;
-                    if(touchStartX-touchEndX>50) this.next();
-                    if(touchEndX-touchStartX>50) this.prev()
-                },{passive:true})
+            setupTouch: function() {
+                var self = this;
+                var touchStartX = 0;
+                var touchEndX = 0;
+                this.track.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+                this.track.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if(touchStartX - touchEndX > 50) self.next();
+                    if(touchEndX - touchStartX > 50) self.prev();
+                }, {passive: true});
             }
         };
 
-        // === 📱 Mobile Menu Handler ===
-        const initMobileMenu = () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navMenu = document.getElementById('nav-menu');
+        // Mobile Menu
+        function initMobileMenu() {
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            var navMenu = document.getElementById('nav-menu');
             
             if (!navMenu) return;
             
-            const toggleMenu = () => {
-                const isActive = navMenu.classList.toggle('active');
+            function toggleMenu() {
+                var isActive = navMenu.classList.toggle('active');
                 if (menuToggle) menuToggle.setAttribute('aria-expanded', isActive);
                 if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', isActive);
-            };
+            }
             
-            menuToggle?.addEventListener('click', toggleMenu);
-            mobileMenuToggle?.addEventListener('click', toggleMenu);
+            if(menuToggle) menuToggle.addEventListener('click', toggleMenu);
+            if(mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMenu);
             
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
+            navMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
                     if (link.getAttribute('aria-haspopup') === 'true') return;
                     navMenu.classList.remove('active');
                     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
@@ -1513,14 +1513,14 @@
                 });
             });
             
-            document.addEventListener('click', (e) => {
+            document.addEventListener('click', function(e) {
                 if (!e.target.closest('.site-header') && !e.target.closest('.mobile-social-bar') && navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                     if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
                     if (mobileMenuToggle) mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 }
             });
-        };
+        }
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initMobileMenu);
@@ -1528,58 +1528,58 @@
             initMobileMenu();
         }
 
-        // === 🧭 Dropdown Toggle ===
-        const initDropdown = () => {
-            const dropdowns = document.querySelectorAll('.dropdown');
+        // Dropdown Toggle
+        function initDropdown() {
+            var dropdowns = document.querySelectorAll('.dropdown');
             
             function isMobile() {
                 return window.innerWidth <= 768;
             }
             
-            dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+            dropdowns.forEach(function(dropdown) {
+                var toggle = dropdown.querySelector('a[aria-haspopup="true"]');
                 if (!toggle) return;
                 
-                toggle.addEventListener('click', (e) => {
+                toggle.addEventListener('click', function(e) {
                     if (!isMobile()) return;
                     
                     e.preventDefault();
                     e.stopPropagation();
                     e.stopImmediatePropagation();
                     
-                    dropdowns.forEach(d => {
+                    dropdowns.forEach(function(d) {
                         if (d !== dropdown && d.classList.contains('active')) {
                             d.classList.remove('active');
-                            const t = d.querySelector('a[aria-haspopup="true"]');
+                            var t = d.querySelector('a[aria-haspopup="true"]');
                             if (t) t.setAttribute('aria-expanded', 'false');
                         }
                     });
                     
-                    const isActive = dropdown.classList.toggle('active');
+                    var isActive = dropdown.classList.toggle('active');
                     toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-                }, { passive: false });
+                });
                 
-                const menu = dropdown.querySelector('.dropdown-content');
+                var menu = dropdown.querySelector('.dropdown-content');
                 if (menu) {
-                    menu.querySelectorAll('a[role="menuitem"]').forEach(link => {
-                        link.addEventListener('click', (e) => {
+                    menu.querySelectorAll('a[role="menuitem"]').forEach(function(link) {
+                        link.addEventListener('click', function(e) {
                             if (isMobile()) e.stopPropagation();
                         });
                     });
                 }
             });
             
-            document.addEventListener('click', (e) => {
+            document.addEventListener('click', function(e) {
                 if (!isMobile()) return;
-                dropdowns.forEach(dropdown => {
+                dropdowns.forEach(function(dropdown) {
                     if (!dropdown.contains(e.target)) {
                         dropdown.classList.remove('active');
-                        const toggle = dropdown.querySelector('a[aria-haspopup="true"]');
+                        var toggle = dropdown.querySelector('a[aria-haspopup="true"]');
                         if (toggle) toggle.setAttribute('aria-expanded', 'false');
                     }
                 });
-            }, { capture: true });
-        };
+            }, true);
+        }
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initDropdown);
@@ -1587,14 +1587,14 @@
             initDropdown();
         }
 
-        // === 📞 Phone Validation ===
-        const phoneInput = document.getElementById('phone');
+        // Phone Validation
+        var phoneInput = document.getElementById('phone');
         if (phoneInput) {
-            phoneInput.addEventListener('input', function(e) {
+            phoneInput.addEventListener('input', function() {
                 this.value = this.value.replace(/[^\d\s\-\+\(\)]/g, '');
             });
             phoneInput.addEventListener('blur', function() {
-                const digits = this.value.replace(/\D/g, '');
+                var digits = this.value.replace(/\D/g, '');
                 if (digits.length < 7) {
                     this.setCustomValidity('Please enter a valid phone number');
                 } else {
@@ -1603,68 +1603,68 @@
             });
         }
 
-        // === 📧 FORM HANDLER ===
-        const bookingForm = document.getElementById('booking-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const loader = document.getElementById('form-loader');
-        const formMsg = document.getElementById('form-msg');
-        const dateInput = document.getElementById('date');
+        // Form Handler
+        var bookingForm = document.getElementById('booking-form');
+        var submitBtn = document.getElementById('submit-btn');
+        var loader = document.getElementById('form-loader');
+        var formMsg = document.getElementById('form-msg');
+        var dateInput = document.getElementById('date');
         
         function setMinDate() {
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min',today)
+            var today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
         }
         setMinDate();
         
-        bookingForm.addEventListener('submit',function(e) {
+        bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            if(bookingForm.checkValidity()===false) {
+            if(bookingForm.checkValidity() === false) {
                 bookingForm.reportValidity();
-                return
+                return;
             }
-            submitBtn.style.display='none';
-            loader.style.display='block';
-            formMsg.style.display='none';
-            const formData = new FormData(bookingForm);
+            submitBtn.style.display = 'none';
+            loader.style.display = 'block';
+            formMsg.style.display = 'none';
+            var formData = new FormData(bookingForm);
             
             fetch(bookingForm.action, {
-                method:'POST',
-                body:formData,
-                headers:{'Accept':'application/json'}
-            }).then(response=>{
-                loader.style.display='none';
+                method: 'POST',
+                body: formData,
+                headers: {'Accept': 'application/json'}
+            }).then(function(response) {
+                loader.style.display = 'none';
                 if(response.ok) {
-                    formMsg.className='form-msg success';
-                    formMsg.textContent='✅ Booking received! We will contact you soon to confirm.';
-                    formMsg.style.display='block';
+                    formMsg.className = 'form-msg success';
+                    formMsg.textContent = 'Booking received! We will contact you soon to confirm.';
+                    formMsg.style.display = 'block';
                     bookingForm.reset();
-                    setTimeout(()=>formMsg.style.display='none',6e3)
+                    setTimeout(function() { formMsg.style.display = 'none'; }, 6000);
                 } else {
-                    formMsg.className='form-msg error';
-                    formMsg.textContent='⚠️ Something went wrong. Please try again or message us on WhatsApp.';
-                    formMsg.style.display='block'
+                    formMsg.className = 'form-msg error';
+                    formMsg.textContent = 'Something went wrong. Please try again or message us on WhatsApp.';
+                    formMsg.style.display = 'block';
                 }
-                submitBtn.style.display='block'
-            }).catch(()=>{
-                loader.style.display='none';
-                submitBtn.style.display='block';
-                formMsg.className='form-msg error';
-                formMsg.textContent='🌐 Connection error. Please check your internet.';
-                formMsg.style.display='block'
-            })
+                submitBtn.style.display = 'block';
+            }).catch(function() {
+                loader.style.display = 'none';
+                submitBtn.style.display = 'block';
+                formMsg.className = 'form-msg error';
+                formMsg.textContent = 'Connection error. Please check your internet.';
+                formMsg.style.display = 'block';
+            });
         });
 
-        // === 🚀 INIT ALL ===
-        document.addEventListener('DOMContentLoaded',()=>{
+        // Init All
+        document.addEventListener('DOMContentLoaded', function() {
             heroSlider.init();
             servicesCarousel.init();
             blogCarousel.init();
         });
         
-        window.addEventListener('resize',()=>{
+        window.addEventListener('resize', function() {
             if(servicesCarousel.track) servicesCarousel.updateTrack();
-            if(blogCarousel.track) blogCarousel.updateTrack()
-        })
+            if(blogCarousel.track) blogCarousel.updateTrack();
+        });
     })();
     </script>
 </body>
