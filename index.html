@@ -720,6 +720,22 @@
         .form-msg.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
         .hp-field { display: none !important; opacity: 0; height: 0; width: 0; overflow: hidden; }
 
+        /* === 📱 Phone Input Enhancements === */
+        #phone {
+            inputmode: numeric;
+        }
+        #phone:invalid:not(:placeholder-shown) {
+            border-color: var(--error) !important;
+        }
+        #phone:valid:not(:placeholder-shown) {
+            border-color: var(--success) !important;
+        }
+        @media (max-width: 480px) {
+            #phone {
+                font-size: 16px;
+            }
+        }
+
         /* === ❓ FAQ === */
         .faq-container { max-width: 800px; margin: 0 auto; }
         details { background: var(--card-bg); margin-bottom: var(--space-sm); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: var(--transition); }
@@ -797,9 +813,9 @@
 </head>
 <body>
 
-    <!-- 📱 WhatsApp Button -->
+    <!-- 📱 WhatsApp Button (CORREGIDO: 5097780873) -->
     <div class="float-btns">
-        <a href="https://wa.me/15094925802?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
+        <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
            class="float-btn whatsapp" 
            target="_blank" 
            rel="noopener" 
@@ -818,7 +834,7 @@
             <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <!-- RingCentral Call Button -->
+            <!-- RingCentral Call Button (5094925802) -->
             <a href="tel:+15094925802" class="header-call-btn" aria-label="Call us at +1 509 492 5802">
                 <i class="fas fa-phone"></i>
                 <span>(509) 492-5802</span>
@@ -857,6 +873,7 @@
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Mobile Call Button (5094925802) -->
                 <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
                     <i class="fas fa-phone"></i>
                 </a>
@@ -1027,7 +1044,7 @@
         </div>
     </section>
 
-    <!-- 📅 Booking -->
+    <!-- 📅 Booking (CON CAMPO DE TELÉFONO AGREGADO) -->
     <section id="booking">
         <h2 class="section-title">Book Your Appointment</h2>
         <div class="booking-container">
@@ -1038,6 +1055,8 @@
             </div>
             <form id="booking-form" action="https://formspree.io/f/xeenpdvb" method="POST">
                 <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+                
+                <!-- Fila 1: Nombre + Email -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="owner_name">Owner's Name</label>
@@ -1048,6 +1067,8 @@
                         <input type="email" id="email" name="email" required placeholder="your@email.com">
                     </div>
                 </div>
+                
+                <!-- Fila 2: Mascota + Servicio -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="dog_name">Your Dog's Name</label>
@@ -1063,6 +1084,17 @@
                         </select>
                     </div>
                 </div>
+                
+                <!-- ✅ NUEVO: Campo de Teléfono -->
+                <div class="form-group">
+                    <label for="phone">Phone Number <span style="color:var(--primary)">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Ex: (555) 123-4567" pattern="[0-9\s\-\+\(\)]{7,20}" inputmode="numeric">
+                    <small style="color:var(--text-light);font-size:0.85rem;display:block;margin-top:4px">
+                        <i class="fas fa-info-circle"></i> We'll contact you to confirm your appointment
+                    </small>
+                </div>
+                
+                <!-- Fila 3: Fecha + Hora -->
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)">
                     <div class="form-group">
                         <label for="date">Preferred Date</label>
@@ -1073,6 +1105,7 @@
                         <input type="time" id="time" name="time" required>
                     </div>
                 </div>
+                
                 <button type="submit" class="btn-cta" style="width:100%;border:none;cursor:pointer" id="submit-btn">Confirm Booking</button>
                 <div id="form-loader" style="display:none;text-align:center;margin-top:var(--space-sm)">
                     <i class="fas fa-spinner fa-spin"></i> Processing...
@@ -1552,6 +1585,22 @@
             document.addEventListener('DOMContentLoaded', initDropdown);
         } else {
             initDropdown();
+        }
+
+        // === 📞 Phone Validation ===
+        const phoneInput = document.getElementById('phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^\d\s\-\+\(\)]/g, '');
+            });
+            phoneInput.addEventListener('blur', function() {
+                const digits = this.value.replace(/\D/g, '');
+                if (digits.length < 7) {
+                    this.setCustomValidity('Please enter a valid phone number');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
         }
 
         // === 📧 FORM HANDLER ===
