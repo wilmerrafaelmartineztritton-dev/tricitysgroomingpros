@@ -11,7 +11,7 @@
     <!-- Open Graph & Twitter -->
     <meta property="og:title" content="Gallery | Tri-Citys Grooming Pros">
     <meta property="og:description" content="Browse our collection of before & after photos and videos of our professional grooming work.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:image" content="images/gallery/og-gallery.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -21,14 +21,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://images.unsplash.com">
     
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Security: CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://images.unsplash.com https://*.googleapis.com https://*.google.com ; frame-src 'self' https://www.google.com https://*.google.com https://www.youtube.com; connect-src 'self' https://formspree.io https://www.google-analytics.com;">
+    <!-- Security: CSP - Actualizado para imágenes locales -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://*.googleapis.com https://*.google.com ; frame-src 'self' https://www.google.com https://*.google.com https://www.youtube.com; connect-src 'self' https://formspree.io https://www.google-analytics.com;">
 
     <style>
         :root {
@@ -436,7 +435,7 @@
             color: white;
             padding: 0 var(--space-sm);
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+                        url('images/gallery/salud_dental.webp') center/cover no-repeat;
         }
         .page-hero h1 {
             font-size: 2.8rem;
@@ -780,38 +779,42 @@
             <button class="filter-btn" data-filter="before-after">Before & After</button>
         </div>
 
-        <!-- Gallery Grid -->
+        <!-- Gallery Grid - OPTIMIZED FOR LOCAL IMAGES -->
         <div class="gallery-container">
-            <!-- Item 1: Photo -->
+            
+            <!-- Item 1: Photo (Before & After) -->
             <div class="gallery-item" data-category="photos before-after">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" 
-                     alt="Golden Retriever grooming transformation" 
+                <img src="images/gallery/Perro negro.webp" 
+                     alt="Goldendoodle before grooming - Tri-Citys Grooming Pros" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <span class="gallery-badge">Before & After</span>
                 <div class="gallery-item-content">
-                    <h4>Max - Golden Retriever</h4>
+                    <h4>Goldendoodle</h4>
                     <p>Full grooming transformation</p>
-                    <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" class="instagram-link">
+                    <a href="https://www.instagram.com/p/DXRHpzaDcwW/" target="_blank" rel="noopener" class="instagram-link">
                         <i class="fab fa-instagram"></i> See on Instagram
                     </a>
                 </div>
             </div>
 
-            <!-- Item 2: Video -->
+            <!-- Item 2: Video (CORREGIDO) -->
             <div class="gallery-item video-item" data-category="videos">
-                <video poster="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600" 
-                     preload="metadata">
-                    <source src="videos/grooming-demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+                <div style="position:relative;width:100%;height:300px;background:url('images/gallery/grooming-demo-poster.webp') center/cover no-repeat #1e1a17;border-radius:var(--radius) var(--radius) 0 0;">
+                    <video preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                        <source src="videos/dental.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
                 <span class="gallery-badge"><i class="fas fa-video"></i> Video</span>
                 <div class="gallery-item-content">
-                    <h4>Grooming Session</h4>
-                    <p>Watch our gentle grooming process</p>
-                    <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" class="instagram-link">
+                    <h4>Dental Health</h4>
+                    <p>Look what an infection causes.</p>
+                    <a href="https://www.instagram.com/p/DPit2IfgKVj/" target="_blank" rel="noopener" class="instagram-link">
                         <i class="fab fa-instagram"></i> See on Instagram
                     </a>
                 </div>
@@ -819,8 +822,10 @@
 
             <!-- Item 3: Photo -->
             <div class="gallery-item" data-category="photos">
-                <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600" 
-                     alt="Happy Poodle after grooming" 
+                <img src="images/gallery/poodle-luna.webp" 
+                     alt="Luna the Poodle after breed-specific styling" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <div class="gallery-item-content">
                     <h4>Luna - Poodle</h4>
@@ -831,10 +836,12 @@
                 </div>
             </div>
 
-            <!-- Item 4: Photo -->
+            <!-- Item 4: Photo (Before & After) -->
             <div class="gallery-item" data-category="photos before-after">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600" 
-                     alt="Labrador Retriever before and after" 
+                <img src="images/gallery/labrador-buddy.webp" 
+                     alt="Buddy the Labrador before and after bath" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <span class="gallery-badge">Before & After</span>
                 <div class="gallery-item-content">
@@ -846,15 +853,16 @@
                 </div>
             </div>
 
-            <!-- Item 5: Video -->
+            <!-- Item 5: Video (CORREGIDO) -->
             <div class="gallery-item video-item" data-category="videos">
-                <video poster="https://images.unsplash.com/photo-1591768793355-74d7c80b0e17?auto=format&fit=crop&q=80&w=600" 
-                     preload="metadata">
-                    <source src="videos/happy-dogs.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+                <div style="position:relative;width:100%;height:300px;background:url('images/gallery/happy-dogs-poster.webp') center/cover no-repeat #1e1a17;border-radius:var(--radius) var(--radius) 0 0;">
+                    <video preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                        <source src="videos/happy-dogs.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
                 <span class="gallery-badge"><i class="fas fa-video"></i> Video</span>
                 <div class="gallery-item-content">
@@ -868,8 +876,10 @@
 
             <!-- Item 6: Photo -->
             <div class="gallery-item" data-category="photos">
-                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=600" 
-                     alt="French Bulldog grooming" 
+                <img src="images/gallery/frenchie-charlie.webp" 
+                     alt="Charlie the French Bulldog after eco-friendly bath" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <div class="gallery-item-content">
                     <h4>Charlie - French Bulldog</h4>
@@ -880,10 +890,12 @@
                 </div>
             </div>
 
-            <!-- Item 7: Photo -->
+            <!-- Item 7: Photo (Before & After) -->
             <div class="gallery-item" data-category="photos before-after">
-                <img src="https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?auto=format&fit=crop&q=80&w=600" 
-                     alt="Schnauzer transformation" 
+                <img src="images/gallery/schnauzer-bella.webp" 
+                     alt="Bella the Schnauzer complete makeover" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <span class="gallery-badge">Before & After</span>
                 <div class="gallery-item-content">
@@ -895,15 +907,16 @@
                 </div>
             </div>
 
-            <!-- Item 8: Video -->
+            <!-- Item 8: Video (CORREGIDO) -->
             <div class="gallery-item video-item" data-category="videos">
-                <video poster="https://images.unsplash.com/photo-1587305051754-e1b61f500b67?auto=format&fit=crop&q=80&w=600" 
-                     preload="metadata">
-                    <source src="videos/dental-care.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+                <div style="position:relative;width:100%;height:300px;background:url('images/gallery/dental-care-poster.webp') center/cover no-repeat #1e1a17;border-radius:var(--radius) var(--radius) 0 0;">
+                    <video preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                        <source src="videos/dental-care.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
                 <span class="gallery-badge"><i class="fas fa-video"></i> Video</span>
                 <div class="gallery-item-content">
@@ -917,8 +930,10 @@
 
             <!-- Item 9: Photo -->
             <div class="gallery-item" data-category="photos">
-                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=600" 
-                     alt="Beagle after grooming" 
+                <img src="images/gallery/beagle-cooper.webp" 
+                     alt="Cooper the Beagle after relaxing spa treatment" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <div class="gallery-item-content">
                     <h4>Cooper - Beagle</h4>
@@ -931,8 +946,10 @@
 
             <!-- Item 10: Photo -->
             <div class="gallery-item" data-category="photos">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=600" 
-                     alt="Yorkshire Terrier styling" 
+                <img src="images/gallery/yorkie-daisy.webp" 
+                     alt="Daisy the Yorkshire Terrier precision cut and styling" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <div class="gallery-item-content">
                     <h4>Daisy - Yorkshire Terrier</h4>
@@ -943,15 +960,16 @@
                 </div>
             </div>
 
-            <!-- Item 11: Video -->
+            <!-- Item 11: Video (CORREGIDO) -->
             <div class="gallery-item video-item" data-category="videos">
-                <video poster="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=600" 
-                     preload="metadata">
-                    <source src="videos/facility-tour.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay">
-                    <i class="fas fa-play"></i>
+                <div style="position:relative;width:100%;height:300px;background:url('images/gallery/facility-tour-poster.webp') center/cover no-repeat #1e1a17;border-radius:var(--radius) var(--radius) 0 0;">
+                    <video preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+                        <source src="videos/facility-tour.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
+                        <i class="fas fa-play"></i>
+                    </div>
                 </div>
                 <span class="gallery-badge"><i class="fas fa-video"></i> Video</span>
                 <div class="gallery-item-content">
@@ -963,10 +981,12 @@
                 </div>
             </div>
 
-            <!-- Item 12: Photo -->
+            <!-- Item 12: Photo (Before & After) -->
             <div class="gallery-item" data-category="photos before-after">
-                <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600" 
-                     alt="Cocker Spaniel before and after" 
+                <img src="images/gallery/cocker-rocky.webp" 
+                     alt="Rocky the Cocker Spaniel full service grooming" 
+                     width="600" 
+                     height="400"
                      loading="lazy">
                 <span class="gallery-badge">Before & After</span>
                 <div class="gallery-item-content">
@@ -977,6 +997,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -997,13 +1018,6 @@
                     <i class="fas fa-paw"></i> Tri-Citys Grooming Pros
                 </h3>
                 <p>Your trusted partner for veterinary care, health, and professional aesthetics. We love animals as much as you do.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="index.html#services">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="index.html#booking">Book Now</a>
             </div>
             <div class="footer-links">
                 <h4>Legal</h4>
