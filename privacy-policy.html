@@ -6,7 +6,7 @@
     <meta name="description" content="Privacy Policy of Tri-citys Grooming Pros - Learn how we protect your personal information and pet data.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.tricitysgrooming.com/privacy-policy">
-    <meta name="theme-color" content="#D4AF37">
+    <meta name="theme-color" content="#1e1a17">
     
     <!-- Open Graph & Twitter -->
     <meta property="og:title" content="Privacy Policy | Tri-citys Grooming Pros">
@@ -38,7 +38,7 @@
             --text-dark: #333333;
             --text-light: #666666;
             --card-bg: #ffffff;
-            --header-bg: rgba(255, 255, 255, 0.95);
+            --header-bg: #1e1a17;
             --accent: #D96E4A;
             --yellow: #FFB347;
             --success: #28a745;
@@ -93,7 +93,7 @@
             font-weight: 700; 
         }
 
-        /* === 🎯 OPTIMIZED HEADER === */
+        /* === 🎯 HEADER DARK THEME === */
         .site-header {
             background: var(--header-bg);
             backdrop-filter: blur(10px);
@@ -102,12 +102,20 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
             gap: var(--space-xs);
+        }
+
+        /* Texto blanco en header oscuro para navegación e íconos */
+        .nav-menu a,
+        .menu-toggle,
+        .dropdown > a,
+        .header-social a {
+            color: #ffffff !important;
         }
 
         .logo {
@@ -132,7 +140,6 @@
             align-items: center;
         }
         .header-social a {
-            color: var(--text-dark);
             font-size: 1.2rem;
             transition: var(--transition);
             text-decoration: none !important;
@@ -140,14 +147,16 @@
             align-items: center;
             justify-content: center;
         }
-        .header-social a:hover { color: var(--primary); transform: translateY(-2px); }
+        .header-social a:hover { 
+            color: var(--primary) !important; 
+            transform: translateY(-2px); 
+        }
 
         /* === 📞 Call Button in Header === */
         .header-call-btn {
             display: flex;
             align-items: center;
             gap: 6px;
-            color: var(--text-dark);
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none !important;
@@ -171,7 +180,6 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-dark);
             background: none;
             border: none;
             padding: 5px;
@@ -181,7 +189,7 @@
         /* === 📱 Mobile Social Bar === */
         .mobile-social-bar {
             display: none;
-            background: var(--header-bg);
+            background: #ffffff;
             padding: 4px 15px !important;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
@@ -204,7 +212,7 @@
         }
 
         .mobile-social-bar a {
-            color: var(--text-dark);
+            color: var(--text-dark) !important;
             font-size: 1.1rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -216,7 +224,7 @@
             text-decoration: none !important;
         }
         .mobile-social-bar a:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -234,7 +242,7 @@
         /* === 📱 Mobile Call Button === */
         .mobile-call-btn {
             display: none;
-            color: var(--text-dark);
+            color: var(--text-dark) !important;
             font-size: 1.2rem !important;
             padding: 3px !important;
             border-radius: 50%;
@@ -242,7 +250,7 @@
             text-decoration: none !important;
         }
         .mobile-call-btn:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
             background: rgba(212, 175, 55, 0.1);
             transform: scale(1.1);
         }
@@ -259,30 +267,22 @@
         }
         .nav-menu a {
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 600;
             transition: var(--transition);
             padding: var(--space-xs) 0;
         }
-        .nav-menu a:hover { color: var(--primary); }
+        .nav-menu a:hover { color: var(--primary) !important; }
         .btn-reserve-nav { 
             background: var(--primary); 
             color: white !important; 
-            
-            /* Usamos valores fijos para asegurar que se vea bien */
             padding: 10px 25px; 
-            
             border-radius: 25px;
-            
-            /* Esta es la clave: fuerza el ancho del botón */
             min-width: 100px; 
-            
-            /* Centra el texto y asegura comportamiento de bloque */
             text-align: center;
             display: inline-block;
         }
 
-        /* === 🧭 Dropdown Menu - CORREGIDO DEFINITIVO === */
+        /* === 🧭 Dropdown Menu === */
         .dropdown { 
             position: relative; 
             display: inline-block; 
@@ -301,7 +301,7 @@
             position: absolute;
             background: var(--card-bg);
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 10;
             border-radius: 12px;
             padding: 10px 0;
@@ -318,31 +318,28 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mostrar dropdown SOLO al hacer HOVER en desktop */
+        /* Dropdown en desktop con fondo blanco y texto oscuro */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content {
                 display: block !important;
             }
+            .dropdown-content a { 
+                color: var(--text-dark) !important; 
+            }
+            .dropdown-content a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--primary) !important;
+                padding-left: 25px;
+            }
         }
 
-        /* Estilos de los enlaces del dropdown */
-        .dropdown-content a {
-            color: var(--text-dark);
-            padding: 12px 20px;
-            display: block;
-            text-decoration: none !important;
-            transition: var(--transition);
-        }
-
-        .dropdown-content a:hover,
-        .dropdown-content a:focus {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--primary);
-            padding-left: 25px;
-        }
-
-        /* === 📱 Dropdown en móvil - CORREGIDO === */
+        /* === 📱 Dropdown en móvil === */
         @media (max-width: 768px) {
+            .dropdown {
+                position: relative !important;
+                width: 100%;
+            }
+            
             .dropdown-content {
                 position: static !important;
                 box-shadow: none !important;
@@ -350,25 +347,31 @@
                 border-left: 3px solid var(--primary);
                 margin-left: 20px;
                 padding: 0 0 10px 15px;
-                background: transparent !important;
+                background: rgba(255,255,255,0.05) !important;
                 min-width: auto;
                 display: none !important;
+                width: auto;
+                max-width: 100%;
             }
             
-            /* Mostrar SOLO cuando tenga clase active */
             .dropdown.active .dropdown-content {
                 display: block !important;
+                animation: fadeIn 0.3s ease;
             }
             
             .dropdown-content a {
                 padding: 8px 0;
                 font-size: 0.95rem;
-                color: var(--text-light);
+                color: #e0e0e0 !important;
+                display: block;
+                text-decoration: none !important;
+                pointer-events: auto !important;
             }
             
             .dropdown-content a:hover {
                 padding-left: 10px;
                 background: transparent;
+                color: var(--primary) !important;
             }
         }
 
@@ -382,7 +385,7 @@
                 gap: 5px;
             }
             .header-social { display: none; }
-            .header-call-btn { display: none; } /* Ocultar botón de llamada en desktop móvil */
+            .header-call-btn { display: none; }
             .logo-img { max-height: 70px !important; margin: 0 auto; }
             
             .mobile-social-bar { display: flex !important; flex-direction: column; align-items: center; }
@@ -395,11 +398,12 @@
                 width: 100%;
                 background: var(--header-bg);
                 padding: var(--space-md);
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                box-shadow: 0 10px 10px rgba(0,0,0,0.3);
                 z-index: 998;
             }
             .nav-menu.active { display: block; }
             .nav-menu ul { flex-direction: column; text-align: center; gap: var(--space-sm); }
+            .nav-menu a { color: #ffffff !important; }
             
             .mobile-social-bar .social-links {
                 display: grid !important;
@@ -538,7 +542,7 @@
 </head>
 <body>
 
-    <!-- 📱 WhatsApp Button -->
+    <!-- 📱 WhatsApp Button (CORREGIDO: 5097780873) -->
     <div class="float-btns">
         <a href="https://wa.me/15097780873?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment" 
            class="float-btn whatsapp" 
@@ -559,7 +563,7 @@
             <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <!-- RingCentral Call Button -->
+            <!-- RingCentral Call Button (5094925802) -->
             <a href="tel:+15094925802" class="header-call-btn" aria-label="Call us at +1 509 492 5802">
                 <i class="fas fa-phone"></i>
                 <span>(509) 492-5802</span>
@@ -574,7 +578,9 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#" aria-haspopup="true" aria-expanded="false" id="aboutToggle">About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i></a>
+                    <a href="javascript:void(0)" aria-haspopup="true" aria-expanded="false" id="aboutToggle">
+                        About <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:0.7rem"></i>
+                    </a>
                     <ul class="dropdown-content" role="menu" aria-labelledby="aboutToggle">
                         <li role="none"><a href="privacy-policy.html" role="menuitem">Privacy Policy</a></li>
                         <li role="none"><a href="terms-conditions.html" role="menuitem">Terms & Conditions</a></li>
@@ -583,20 +589,20 @@
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="consejos-cuidado-perros.html">Blog</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
                 <li><a href="index.html#booking" class="btn-reserve-nav">Book Now</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 📱 Mobile Social Bar (Optimized) -->
+    <!-- 📱 Mobile Social Bar -->
     <div class="mobile-social-bar">
         <div class="social-links">
             <div class="social-icons-group">
                 <a href="https://www.instagram.com/tricitysgrooming/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61581031276677" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@tricitys.grooming?_r=1&_t=ZS-96COtaceMkb" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <!-- Mobile Call Button -->
+                <!-- Mobile Call Button (5094925802) -->
                 <a href="tel:+15094925802" class="mobile-call-btn" aria-label="Call us at +1 509 492 5802">
                     <i class="fas fa-phone"></i>
                 </a>
