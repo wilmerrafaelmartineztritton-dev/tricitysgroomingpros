@@ -681,6 +681,25 @@
         .services-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; transition: var(--transition); }
         .services-dot.active { background: var(--secondary); transform: scale(1.2); }
 
+        /* === 🔄 Services Carousel: Grid en PC, Carousel en Móvil === */
+        @media (min-width: 769px) {
+            .services-track {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                transform: none !important;
+                transition: none !important;
+                padding: 0 !important;
+            }
+            .service-carousel-card {
+                flex: none !important;
+                min-width: auto !important;
+                width: 100% !important;
+            }
+            .services-carousel-controls {
+                display: none !important;
+            }
+        }
+
         /* Testimonials */
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
         .testimonial-card { background: var(--card-bg); padding: var(--space-md); border-radius: var(--radius); border-left: 4px solid var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; }
@@ -764,6 +783,52 @@
         .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; background: #25d366; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); transition: var(--transition); text-decoration: none; }
         .float-btn:hover { transform: scale(1.1); }
 
+        /* === 🚀 Back to Top Button === */
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .back-to-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top-btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        @media (max-width: 480px) {
+            .back-to-top-btn {
+                right: 20px;
+                bottom: 90px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .intro-section { padding: var(--space-lg) 5%; }
@@ -815,6 +880,11 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+
+    <!-- === 🚀 Back to Top Button === -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Volver arriba" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Header -->
     <header class="site-header">
@@ -1654,6 +1724,25 @@
                 formMsg.style.display = 'block';
             });
         });
+
+        // === 🚀 Back to Top Button Logic ===
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
 
         // Init All
         document.addEventListener('DOMContentLoaded', function() {
