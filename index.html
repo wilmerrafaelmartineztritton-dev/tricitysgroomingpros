@@ -1285,8 +1285,7 @@
                 <p><i class="fas fa-envelope" style="color:var(--primary);margin-right:8px"></i>tricitysgromingpros@gmail.com</p>
                 <br>
                 <h4>Hours:</h4>
-                <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-                <p>Saturdays: 9:00 AM - 4:00 PM</p>
+                <p>Mon - Sun: 9:00 AM - 9:00 PM</p>
             </div>
             <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2127.649345850957!2d-119.10391282465027!3d46.22649167109664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54987edbc9f88e7b%3A0xb593e97754e3489!2s808%20S%2010th%20Ave%2C%20Pasco%2C%20WA%2099301%2C%20USA!5e1!3m2!1sen!2sus!4v1778156216519!5m2!1sen!2sus" 
@@ -1756,6 +1755,62 @@
             if(blogCarousel.track) blogCarousel.updateTrack();
         });
     })();
+    </script>
+    <script>
+        // === 🔄 Cargar datos dinámicos desde JSON ===
+        const loadJSON = async (file) => {
+            try {
+                const res = await fetch(`data/${file}.json?t=${Date.now()}`); // ?t= evita caché
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return await res.json();
+            } catch (err) {
+                console.warn(`No se pudo cargar data/${file}.json:`, err);
+                return { items: [] };
+            }
+        };
+
+        // === 🎠 Ejemplo: Renderizar Slider desde JSON ===
+        const renderSlider = async () => {
+            const data = await loadJSON('slider');
+            const container = document.getElementById('hero-slider');
+            const dotsContainer = document.getElementById('slider-dots');
+            const tipEl = document.getElementById('slider-tip');
+            const descEl = document.getElementById('slider-desc');
+            
+            if (!container || !data.items.length) return;
+            
+            const sorted = data.items.sort((a, b) => (a.order || 0) - (b.order || 0));
+            
+            container.innerHTML = sorted.map((item, i) => `
+                <div class="slider-slide ${i === 0 ? 'active' : ''}" 
+                    style="background-image:url('${item.image}')" 
+                    role="group" aria-label="Slide ${i+1}">
+                    <img src="${item.image}" alt="${item.alt || item.tip}" 
+                        loading="${i === 0 ? 'eager' : 'lazy'}" width="1920" height="1080"
+                        style="position:absolute;width:100%;height:100%;object-fit:cover;opacity:0">
+                </div>
+            `).join('');
+            
+            dotsContainer.innerHTML = sorted.map((_, i) => `
+                <button class="slider-dot ${i === 0 ? 'active' : ''}" 
+                        aria-label="Go to slide ${i+1}"></button>
+            `).join('');
+            
+            if (sorted[0]) {
+                tipEl.textContent = sorted[0].tip;
+                descEl.textContent = sorted[0].desc;
+            }
+            
+            // ⚠️ IMPORTANTE: Re-inicializa la lógica de tu slider aquí
+            // initHeroSlider(sorted); 
+        };
+
+        // === 🚀 Iniciar carga al cargar la página ===
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSlider();
+            // renderServices();
+            // renderGallery();
+        });
     </script>
 </body>
 </html>
